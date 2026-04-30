@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all ease 0.1s;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4AA8FF;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #0E0E2A;
+  color: white;
+  padding: 40px 30px;
+  width: 550px;
+  border-radius: 15px;
+}
+.wrapper .password-field {
+  background-color: #1C1C3A;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.wrapper .length-label-div {
+  display: flex;
+  gap: 10px;
+}
+.wrapper .input-range-slider-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+}
+.wrapper .input-range-slider-div span {
+  font-size: 34px;
+}
+.wrapper .input-range-slider-div .range-slider {
+  flex: 1;
+  cursor: pointer;
+}
+.wrapper .settings-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+.wrapper .settings-div .control-div {
+  background-color: #1C1C3A;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.wrapper .settings-div .control-div .control-name {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.wrapper .settings-div .control-div {
+  /*
+  Source - https://stackoverflow.com/a/79274945
+  Posted by Naeem Akhtar
+  Retrieved 2026-04-29, License - CC BY-SA 4.0
+  */
+}
+.wrapper .settings-div .control-div .toggle-btn {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.wrapper .settings-div .control-div .toggle-btn input {
+  display: none;
+}
+.wrapper .settings-div .control-div .toggle-btn input:checked + .slider {
+  background-color: #4AA8FF;
+}
+.wrapper .settings-div .control-div .toggle-btn input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.wrapper .settings-div .control-div .toggle-btn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CCCCDD;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.wrapper .settings-div .control-div .toggle-btn .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.wrapper button {
+  border: none;
+  background: linear-gradient(to right, #4A6DD4, #7B5BA6);
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+}/*# sourceMappingURL=style.css.map */

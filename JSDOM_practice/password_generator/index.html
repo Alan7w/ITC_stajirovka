@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body onload="main()">
+    <div class="wrapper">
+        <h1 class="title">PassWord Generator</h1>
+        <div class="password-field"></div>
+        <div class="length-label-div">
+            <div>Length:</div>
+            <label for="range-slider" class="current-length">8</label>
+        </div>
+
+        <div class="input-range-slider-div">
+            <span>4</span>
+            <input type="range" id="range-slider" class="range-slider" min="4" max="32" value="8" step="1">
+            <span>32</span>
+        </div>
+
+        <span class="settings-title">Settings</span>
+        <div class="settings-div"></div>
+
+        <button onclick="generatePassword()">Generate Password</button>
+    </div>
+</body>
+
+</html>
