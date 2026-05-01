@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILANDI | Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="lang-div">
+            <span class="lang-ru">ru</span> <span class="lang-uzb">uzb</span>
+        </div>
+
+        <nav class="header-nav">
+            <input type="checkbox" id="burger-btn-toggle" class="burger-btn-toggle-checkbox">
+            <label for="burger-btn-toggle" class="burger-btn">
+                <span class="stick top"></span>
+                <span class="stick middle"></span>
+                <span class="stick bottom"></span>
+            </label>
+
+            <div class="title-div">
+                <h1>MILANDI</h1>
+                <img src="../icons/brand-logo.svg" alt="brand-logo" class="brand-logo">
+            </div>
+
+            <a href="cart.html" class="cart-logo">
+                <img src="../icons/cart-logo.svg" alt="cart-logo">
+            </a>
+
+            <section class="navbar">
+                <div class="navlinks">
+                    <a href="../landing-page/main.html" class="navlink">Главная</a>
+                    <a href="" class="navlink">О нас</a>
+                    <a href="" class="navlink">Категории</a>
+                    <a href="../shopping-page/shop.html" class="navlink">Mагазин</a>
+                </div>
+
+                <div class="login-signup-btns-div">
+                    <button class="login-btn">Войти</button>
+                    <button class="sign-up-btn">Зарегистрироваться</button>
+                </div>
+            </section>
+        </nav>
+    </header>
+
+    <div class="scrollable-content">
+        <main class="main">
+            <section class="place-order-section">
+                <h2>Оформление заказа</h2>
+                <div class="place-order-div">
+                    <div class="payment-price-method-div">
+                        <div class="price-details-div">
+                            <div class="item-price">
+                                <span>Товаров: (1)</span>
+                                <span>Сумма: $235</span>
+                            </div>
+
+                            <div class="total-price">
+                                <span>Общая сумма к оплате:</span>
+                                <span>$235</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-methods">
+                            <div class="click-method">
+                                <input type="radio" name="payment-method" id="click">
+                                <img src="../icons/click.svg" alt="click-logo" class="cart-logo">
+                            </div>
+
+                            <div class="payme-method">
+                                <input type="radio" name="payment-method" id="payme">
+                                <img src="../icons/payme.svg" alt="payme-logo" class="payme-logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="#" class="place-order-form">
+                        <input type="text" name="address" id="address-input" placeholder="Адресс доставки">
+                        <input type="text" name="name" id="name-input" placeholder="Имя">
+                        <input type="text" name="phone-number" id="phone-numberr-input" placeholder="Номер телефона">
+
+                        <div class="payment-methods mobile">
+                            <div class="click-method">
+                                <input type="radio" name="payment-method" id="click">
+                                <img src="../icons/click.svg" alt="click-logo" class="cart-logo">
+                            </div>
+
+                            <div class="payme-method">
+                                <input type="radio" name="payment-method" id="payme">
+                                <img src="../icons/payme.svg" alt="payme-logo" class="payme-logo">
+                            </div>
+                        </div>
+
+                        <button>Перейти к оплате</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="your-orders-section">
+                <h2>Ваш заказ</h2>
+                <div class="order-details">
+                    <img src="../img/white-hoodie.png" alt="white-hoodie" class="white-hoodie-img">
+                    <div class="order-info-div">
+                        <div class="order-title-close-sign-div">
+                            <h3>Худи мужская белая с принтом.</h3>
+                            <span class="close-sign">&times;</span>
+                        </div>
+
+                        <div class="rating-paragraph-div">
+                            <img src="../icons/rating.svg" alt="rating" class="rating-logo">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget tellus purus, id pretium
+                                viverra rutrum. Et blandit nunc a pellentesque in cras facilisis sapien, dictum. At vel
+                                egestas urna morbi tortor leo ut. In curabitur at pretium vulputate in. Porta bibendum
+                                feugiat congue id rhoncus. Vel semper enim, eget.
+                            </p>
+                        </div>
+
+                        <div class="price-size-count-info">
+                            <div class="order-price-size-div">
+                                <span class="order-price">25.000 Сум</span>
+                                <span class="order-size">Size: <span class="size-number">28</span></span>
+                            </div>
+                            <div class="count-element-div">
+                                <div class="trash-bin-div">
+                                    <img src="../icons/trash-bin.svg" alt="trash-bin-logo" class="trash-bin-logo">
+                                </div>
+                                <div class="count-control-div">
+                                    <div class="minus">-</div>
+                                    <div class="order-count">1</div>
+                                    <div class="plus">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-details">
+                    <img src="../img/white-hoodie.png" alt="white-hoodie" class="white-hoodie-img">
+                    <div class="order-info-div">
+                        <div class="order-title-close-sign-div">
+                            <h3>Худи мужская белая с принтом.</h3>
+                            <span class="close-sign">&times;</span>
+                        </div>
+
+                        <div class="rating-paragraph-div">
+                            <img src="../icons/rating.svg" alt="rating" class="rating-logo">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget tellus purus, id pretium
+                                viverra rutrum. Et blandit nunc a pellentesque in cras facilisis sapien, dictum. At vel
+                                egestas urna morbi tortor leo ut. In curabitur at pretium vulputate in. Porta bibendum
+                                feugiat congue id rhoncus. Vel semper enim, eget.
+                            </p>
+                        </div>
+
+                        <div class="price-size-count-info">
+                            <div class="order-price-size-div">
+                                <span class="order-price">25.000 Сум</span>
+                                <span class="ordered-item-size">Size: <span class="size-number">28</span></span>
+                            </div>
+                            <div class="count-element-div">
+                                <div class="trash-bin-div">
+                                    <img src="../icons/trash-bin.svg" alt="trash-bin-logo" class="trash-bin-logo">
+                                </div>
+                                <div class="count-control-div">
+                                    <div class="minus">-</div>
+                                    <div class="order-count">1</div>
+                                    <div class="plus">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stores-section">
+                <h2>Магазины</h2>
+                <div class="stores-grid">
+                    <div><img src="../img/stores/trendyol.png" alt="trendyol-logo" class="trendyol-logo"></div>
+                    <div><img src="../img/stores/boyner.png" alt="boyner-logo" class="boyner-logo"></div>
+                    <div><img src="../img/stores/USpolo.png" alt="USpolo-logo" class="USpolo-logo"></div>
+                    <div><img src="../img/stores/PierreCardin.png" alt="PierreCardin-logo" class="PierreCardin-logo">
+                    </div>
+                </div>
+            </section>
+
+            <section class="different-brands-section">
+                <h2>Категории</h2>
+                <div class="brands-grid">
+                    <!-- first row -->
+                    <div class="brand-type-name">
+                        <span>Одежда</span>
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/Zara.png" alt="zara-logo" class="zara-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/mavi.png" alt="mavi-logo" class="mavi-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/ipekyol.png" alt="ipekyol-logo"
+                            class="ipekyol-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/NetWork.png" alt="NetWork-logo"
+                            class="NetWork-logo"></div>
+
+                    <!-- second row -->
+                    <div class="brand-type-name">
+                        <span>Детская одежда</span>
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/waikiki.png" alt="waikiki-logo"
+                            class="waikiki-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/koton.png" alt="koton-logo" class="koton-logo">
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/civil.png" alt="civil-logo" class="civil-logo">
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/defacto.png" alt="defacto-logo"
+                            class="defacto-logo"></div>
+
+                    <!-- third row -->
+                    <div class="brand-type-name">
+                        <span>Обувь</span>
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/FLO.png" alt="FLO-logo" class="FLO-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/ayakkabi.png" alt="ayakkabi-logo"
+                            class="ayakkabi-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/INstreet.png" alt="INstreet-logo"
+                            class="INstreet-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/markapark.png" alt="markapark-logo"
+                            class="markapark-logo"></div>
+
+                    <!-- fourth row -->
+                    <div class="brand-type-name">
+                        <span>Домашний текстиль</span>
+                    </div>
+                    <div class="brand-card"><img src="../img/brands/TAC.png" alt="TAC-logo" class="TAC-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/English home.png" alt="English home-logo"
+                            class="english-home-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/cotton box.png" alt="cotton box-logo"
+                            class="cotton-box-logo"></div>
+                    <div class="brand-card"><img src="../img/brands/madame coco.png" alt="madame coco-logo"
+                            class="madame coco-logo"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-div">
+                <div class="about-contact-time-div">
+                    <section class="about-info">
+                        <h2>про imperia</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget pretium aenean dignissim sit
+                            cursus dictumst adipiscing nunc.</p>
+
+                        <img src="../icons/brand-logo.svg" alt="brand-logo" class="brand-logo">
+                    </section>
+
+                    <section class="contact-time-info-div">
+                        <div class="contact-info">
+                            <h2>контакты</h2>
+                            <p>+998 90 958 78 87</p>
+                            <p>support@fonon.uz</p>
+                        </div>
+
+                        <div class="time-info">
+                            <h2>рабочее время</h2>
+                            <p>По будням 9:00 to 18:00</p>
+                            <p>В выходные 11:00 to 18:00</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="menu-categories-info-div">
+                    <section class="menu-info">
+                        <h2>Меню</h2>
+                        <p>Главная</p>
+                        <p>О нас</p>
+                        <p>Категории</p>
+                        <p>Сотрудничество</p>
+                    </section>
+
+                    <section class="categories-info">
+                        <h2>категории</h2>
+                        <p>Женская одежда</p>
+                        <p>Мужская одежда</p>
+                        <p>Детская одежда</p>
+                        <p>Обувь</p>
+                        <p>Сумки</p>
+                        <p>Аксесуары</p>
+                    </section>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

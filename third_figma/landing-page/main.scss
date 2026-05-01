@@ -1,0 +1,378 @@
+@import '../styles/base';
+
+.main {
+    .banner-section {
+        background-color: map-get($map: $colors, $key: secondary);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 250px;
+        padding: 15px var(--main-padding);
+        min-height: 80vh;
+        background: linear-gradient(to bottom,
+                #F5C518 20%,
+                #111111 25%,
+                #111111 75%,
+                #F5C518 80%);
+
+        @include xl {
+            gap: 150px;
+            min-height: 65vh;
+        }
+
+        @include lg {
+            gap: 130px;
+            min-height: 60vh;
+        }
+
+        @include sm {
+            background: #d6a907;
+            min-height: 55vh;
+        }
+
+        @include xs {
+            min-height: 40vh;
+        }
+
+        .banner-image {
+            position: absolute;
+            top: 0;
+            right: var(--main-padding);
+            height: 100%;
+
+            @include xl {
+                width: 27%;
+            }
+
+            @include lg {
+                width: 33%;
+            }
+
+            @include lg {
+                width: 34%;
+            }
+
+            @include sm {
+                width: 50%;
+            }
+        }
+    }
+
+    .hero-content {
+        margin-top: auto;
+        width: 45%;
+
+        @include xl {
+            width: 50%;
+        }
+
+        @include lg {
+            width: 55%;
+        }
+
+        &.mobile {
+            display: none;
+            width: 100%;
+
+            h2,
+            p {
+                color: map-get($map: $colors, $key: primary);
+                margin: 15px 0;
+                padding: 0 var(--main-padding);
+            }
+
+            a {
+                padding: 0 var(--main-padding);
+                color: map-get($map: $colors, $key: primary);
+            }
+
+            @include sm {
+                display: block;
+
+                h2 {
+                    font-size: map-get($map: $fontSizes, $key: lg);
+                }
+
+                p {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                }
+            }
+        }
+
+        @include sm {
+            display: none;
+        }
+
+        h2 {
+            color: map-get($map: $colors, $key: third);
+            font-size: map-get($map: $fontSizes, $key: xl);
+            font-weight: map-get($map: $fontWeights, $key: bolder);
+            letter-spacing: 0.25px;
+            margin-bottom: 30px;
+
+            @include lg {
+                font-size: map-get($map: $fontSizes, $key: lg);
+            }
+        }
+
+        p {
+            color: map-get($map: $colors, $key: third);
+            font-size: map-get($map: $fontSizes, $key: sm);
+            font-weight: map-get($map: $fontWeights, $key: normal);
+            letter-spacing: 0.1px;
+            margin-bottom: 30px;
+
+            @include md {
+                font-size: map-get($map: $fontSizes, $key: xs);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: map-get($map: $colors, $key: secondary);
+            font-size: map-get($map: $fontSizes, $key: sm);
+            font-weight: map-get($map: $fontWeights, $key: bold);
+            letter-spacing: 0.75px;
+            text-transform: uppercase;
+
+            @include md {
+                font-size: map-get($map: $fontSizes, $key: xs);
+            }
+        }
+    }
+
+    .our-advantages-section {
+        padding: 20px var(--main-padding);
+        text-align: center;
+
+        h2 {
+            font-size: map-get($map: $fontSizes, $key: xl);
+            font-weight: map-get($map: $fontWeights, $key: bolder);
+            letter-spacing: 0.25px;
+            margin-bottom: 20px;
+        }
+
+        .advantages-cards {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15%;
+
+            @include xl {
+                gap: 10%;
+            }
+
+            @include lg {
+                gap: 5%;
+            }
+
+            .advantage-card {
+                background-color: map-get($map: $colors, $key: third);
+                padding: 25px 0;
+                margin: 10px 0;
+                border-radius: 12px;
+                text-align: center;
+                flex: 1;
+
+                @include xl {
+                    padding: 20px 0;
+                }
+
+                @include lg {
+                    padding: 15px 0;
+                }
+
+                @include sm {
+
+                    &.express-delivery,
+                    &.top-in-country {
+                        display: none;
+                    }
+                }
+
+                img {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: light);
+                    letter-spacing: 0.44px;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    .phone-app-section {
+        margin-top: 100px;
+        padding: 10px var(--main-padding);
+        background: linear-gradient(to bottom,
+                map-get($map: $colors, $key: phone-app-bg-1),
+                map-get($map: $colors, $key: phone-app-bg-2));
+
+        .phone-app-content {
+            display: flex;
+            align-items: center;
+
+            @include md {
+                flex-direction: column;
+            }
+
+            .phone-image-div {
+                flex: 0.5;
+
+                @include xl {
+                    flex: 0.8;
+                }
+
+                .phone-app-image {
+                    width: 140%;
+                    margin-top: -25%;
+                    margin-left: -25%;
+                    transform: rotate(-15deg);
+                    transform-origin: bottom center;
+
+                    @include md {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .phone-app-text-div {
+                flex: 0.7;
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                h3 {
+                    color: map-get($map: $colors, $key: third);
+                    font-size: map-get($map: $fontSizes, $key: xl);
+                    font-weight: map-get($map: $fontWeights, $key: bolder);
+                    letter-spacing: 0.25px;
+                    line-height: 140%;
+                }
+
+                p {
+                    color: map-get($map: $colors, $key: third);
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+                    line-height: 140%;
+                    letter-spacing: 0.44px;
+
+                    @include md {
+                        font-size: map-get($map: $fontSizes, $key: xs);
+                    }
+                }
+
+                .store-buttons-div {
+                    display: flex;
+                    gap: 3%;
+                }
+            }
+        }
+    }
+
+    .create-your-look-section {
+        display: flex;
+        padding-right: 0 var(--main-padding);
+        align-items: center;
+        justify-content: space-between;
+        background-color: map-get($map: $colors, $key: third);
+
+        @include md {
+            flex-direction: column;
+        }
+
+        .create-your-look-image {
+            width: 50%;
+
+            @include md {
+                width: 100%;
+            }
+        }
+
+        .create-your-look-text-div {
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+
+            @include md {
+                padding: 10px var(--main-padding);
+            }
+
+            h2 {
+                font-size: map-get($map: $fontSizes, $key: xl);
+                font-weight: map-get($map: $fontWeights, $key: bolder);
+                letter-spacing: 0.25px;
+
+                @include md {
+                    font-size: map-get($map: $fontSizes, $key: lg);
+                }
+            }
+
+            p {
+                font-size: map-get($map: $fontSizes, $key: sm);
+                font-weight: map-get($map: $fontWeights, $key: light);
+                letter-spacing: 0.44 px;
+            }
+
+            button {
+                letter-spacing: 0.75px;
+                text-transform: uppercase;
+                width: auto;
+                padding: 8px 20px;
+
+                @include md {
+                    align-self: center;
+                }
+            }
+        }
+    }
+
+    .discount-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: map-get($map: $colors, $key: secondary);
+        height: 500px;
+        margin-bottom: 60px;
+
+        h2 {
+            color: map-get($map: $colors, $key: primary);
+            font-size: map-get($map: $fontSizes, $key: xl);
+            font-weight: map-get($map: $fontWeights, $key: bolder);
+            letter-spacing: 0.25px;
+            line-height: 140%;
+            width: 60%;
+            text-align: center;
+
+            @include xl {
+                font-size: map-get($map: $fontSizes, $key: lg);
+            }
+
+            @include md {
+                font-size: map-get($map: $fontSizes, $key: md);
+                width: 80%;
+            }
+
+            span {
+                font-size: 60px;
+                font-weight: map-get($map: $fontWeights, $key: bolder);
+                line-height: 140%;
+
+                @include md {
+                    font-size: map-get($map: $fontSizes, $key: xl);
+                }
+
+                @include sm {
+                    font-size: map-get($map: $fontSizes, $key: md);
+                }
+            }
+        }
+    }
+}

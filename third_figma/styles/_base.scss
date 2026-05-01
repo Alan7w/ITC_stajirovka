@@ -1,0 +1,316 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@import '../styles/breakpoints';
+@import '../styles/variables';
+@import './base-layout';
+
+:root {
+    --main-padding: 200px;
+
+    @include lg {
+        --main-padding: 124px;
+    }
+
+    @include md {
+        --main-padding: 80px;
+    }
+
+    @include sm {
+        --main-padding: 46px;
+    }
+
+    @include xs {
+        --main-padding: 20px;
+    }
+}
+
+.products-showcase {
+    padding: 0 var(--main-padding);
+
+    h2 {
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        letter-spacing: 0.25px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .products-cards-div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .product-card {
+            background-color: map-get($map: $colors, $key: third);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            flex: 0 0 calc(25% - 15px);
+
+            @include lg {
+                flex: 0 0 calc(50% - 15px);
+            }
+
+            @include sm {
+
+                &.third,
+                &.fourth {
+                    display: none;
+                }
+            }
+
+            @include xs {
+                &.second {
+                    display: none;
+                }
+
+                flex: 0 0 100%;
+            }
+
+            .product-card-img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px 10px 0 0;
+                object-fit: cover;
+                object-position: top;
+                flex: 1;
+
+                @include xl {
+                    height: 60%;
+                }
+            }
+
+            .product-card-content {
+                padding: 10px 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h3 {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: bold);
+                    letter-spacing: 0.75px;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    font-size: map-get($map: $fontSizes, $key: xs);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+                    letter-spacing: 0.4px;
+                    line-height: 140%;
+
+                    @include xl {
+                        line-height: 100%;
+                    }
+                }
+
+                .product-rating-price-div {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    padding: 10px 0;
+                    letter-spacing: 0.75px;
+                    text-transform: uppercase;
+
+                    @include xl {
+                        font-size: map-get($map: $fontSizes, $key: xs);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.categories-showcase {
+    padding: 20px var(--main-padding);
+
+    h2 {
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        letter-spacing: 0.25px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .categories-cards-div {
+        display: flex;
+        justify-content: space-between;
+        gap: 3%;
+
+        .category-card {
+            flex: 1;
+            background-color: map-get($map: $colors, $key: main-bg);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include sm {
+
+                &.third,
+                &.fourth {
+                    display: none;
+                }
+            }
+
+            .category-card-img {
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+                background-color: map-get($map: $colors, $key: card-bg);
+            }
+
+            .category-title {
+                text-align: center;
+                font-size: map-get($map: $fontSizes, $key: lg);
+                font-weight: map-get($map: $fontWeights, $key: light);
+                line-height: 130%;
+                letter-spacing: 2%;
+
+                @include lg {
+                    font-size: map-get($map: $fontSizes, $key: md);
+                }
+
+                @include md {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                }
+            }
+        }
+    }
+}
+
+.pagination-div {
+    text-align: center;
+
+    @include lg {
+        text-align: left;
+    }
+
+    &.mobile {
+        flex-direction: row;
+        display: none;
+
+        .dot.active {
+            box-shadow: 0 0 0 6.8px map-get($map: $colors, $key: main-bg),
+                0 0 0 8px #000;
+        }
+
+        @include sm {
+            display: block;
+        }
+    }
+
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        text-align: center;
+        flex: 1;
+        margin: 5px 0;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #888;
+        margin: 0 5px;
+
+        @include sm {
+            width: 5px;
+            height: 5px;
+        }
+    }
+
+    .dot.active {
+        background-color: map-get($map: $colors, $key: primary);
+        border-radius: 50%;
+        box-shadow: 0 0 0 6.8px #F5C518,
+            0 0 0 8px #000;
+
+        @include sm {
+            box-shadow: 0 0 0 6.8px #d6a907,
+                0 0 0 8px #000;
+        }
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: map-get($map: $colors, $key: primary);
+    transition: all ease 0.3s;
+
+    &::selection {
+        background-color: map-get($map: $colors, $key: secondary);
+    }
+}
+
+body {
+    background-color: map-get($map: $colors, $key: main-bg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+button {
+    background-color: map-get($map: $colors, $key: secondary);
+    color: map-get($map: $colors, $key: primary);
+    cursor: pointer;
+    font-size: map-get($map: $fontSizes, $key: sm);
+    font-weight: map-get($map: $fontWeights, $key: bolder);
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    width: 100%;
+    text-wrap: nowrap;
+
+    @include md {
+        font-size: map-get($map: $fontSizes, $key: xs);
+        padding: 3px 5px;
+    }
+
+    &:hover {
+        background-color: color-mix(in srgb, map-get($map: $colors, $key: secondary) 50%, white 50%);
+        border-radius: 20px;
+    }
+}
+
+input {
+    background-color: map-get($map: $colors, $key: card-bg);
+    border: none;
+    font-size: map-get($map: $fontSizes, $key: sm);
+    font-weight: map-get($map: $fontWeights, $key: light);
+    letter-spacing: 0.44px;
+    line-height: 140%;
+    padding: 18px 15px;
+
+    &:focus {
+        outline: 1.5px solid map-get($map: $colors, $key: secondary);
+    }
+
+    &:hover {
+        background-color: color-mix(in srgb, map-get($map: $colors, $key: secondary) 50%, white 50%);
+    }
+}

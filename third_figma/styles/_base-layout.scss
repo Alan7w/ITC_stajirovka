@@ -1,0 +1,390 @@
+.header {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08),
+        0 10px 25px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+
+    .lang-div {
+        background-color: map-get($map: $colors, $key: primary);
+        padding: 10px var(--main-padding);
+
+        @include sm {
+            display: none;
+        }
+
+        span {
+            font-size: map-get($map: $fontSizes, $key: xxs);
+            font-weight: map-get($map: $fontWeights, $key: bolder);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .lang-ru {
+            color: map-get($map: $colors, $key: third);
+        }
+
+        .lang-uzb {
+            color: color-mix(in srgb, map-get($map: $colors, $key: third) 40%, black 60%);
+        }
+    }
+
+    .header-nav {
+        background-color: map-get($map: $colors, $key: headr-bg);
+        padding: 10px var(--main-padding);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include sm {
+            flex-wrap: wrap;
+        }
+
+        .burger-btn-toggle-checkbox {
+            display: none;
+
+            &:checked~.navbar {
+                display: flex;
+
+                @include sm {
+                    .navlinks {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .login-signup-btns-div {
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            &:checked~.burger-btn {
+                justify-content: center;
+
+                .stick.top {
+                    animation: top-close 0.5s ease forwards;
+                }
+
+                .stick.middle {
+                    animation: middle-close 0.5s ease forwards;
+                }
+
+                .stick.bottom {
+                    animation: bottom-close 0.5s ease forwards;
+                }
+            }
+        }
+
+        .burger-btn {
+            display: none;
+
+            @include sm {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                width: 25px;
+                height: 18px;
+
+                span {
+                    height: 4px;
+                    width: 100%;
+                    border-radius: 20px;
+                    background-color: black;
+                    transform-origin: center;
+                }
+            }
+
+            .stick.top {
+                animation: top-open 0.4s ease forwards;
+            }
+
+            .stick.middle {
+                animation: middle-open 0.4s ease forwards;
+            }
+
+            .stick.bottom {
+                animation: bottom-open 0.4s ease forwards;
+            }
+        }
+
+        .title-div {
+            display: flex;
+            align-items: center;
+            order: 1;
+            flex: 0.2;
+
+            @include sm {
+                flex: 0;
+            }
+
+            h1 {
+                font-size: map-get($map: $fontSizes, $key: lg);
+                font-weight: map-get($map: $fontWeights, $key: bolder);
+                font-family: 'Poppins';
+                letter-spacing: 0.4px;
+
+                @include sm {
+                    display: none;
+                }
+            }
+
+            .brand-logo {
+                display: none;
+
+                @include sm {
+                    display: block;
+                    width: 40px;
+                }
+            }
+        }
+
+        .cart-logo {
+            order: 3;
+
+            @include sm {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            order: 2;
+            flex: 0.75;
+
+            @include sm {
+                display: none;
+                flex-basis: 100%;
+                flex-shrink: 0;
+                padding: 15px 0;
+                flex-direction: column;
+                order: 3;
+            }
+
+            .navlinks {
+                display: flex;
+                gap: 20px;
+                flex-wrap: nowrap;
+
+                @include lg {
+                    gap: 5px;
+                    margin-bottom: 5px;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+                    padding: 10px;
+                    transition: all ease 0.3s;
+                    letter-spacing: 0.1px;
+                    text-wrap: nowrap;
+
+                    @include lg {
+                        padding: 5px;
+                    }
+
+                    @include md {
+                        font-size: map-get($map: $fontSizes, $key: xs);
+                        padding: 2px;
+                    }
+
+                    &:hover {
+                        background-color: color-mix(in srgb, map-get($map: $colors, $key: secondary) 50%, white 50%);
+                        border-radius: 20px;
+                    }
+                }
+            }
+
+            .login-signup-btns-div {
+                display: flex;
+                gap: 20px;
+
+                @include lg {
+                    gap: 10px;
+                }
+
+                .login-btn {
+                    width: auto;
+                    background-color: color-mix(in srgb, map-get($map: $colors, $key: third) 85%, black 15%);
+
+                    &:hover {
+                        background-color: color-mix(in srgb, map-get($map: $colors, $key: secondary) 50%, white 50%);
+                        border-radius: 20px;
+                    }
+                }
+
+                .sign-up-btn {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.scrollable-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 90px;
+        background-color: map-get($map: $colors, $key: main-bg);
+
+        @include sm {
+            gap: 30px;
+        }
+    }
+
+    .footer {
+        background-color: map-get($map: $colors, $key: third);
+        padding: 10px var(--main-padding);
+
+        h2,
+        p {
+            margin-bottom: 15px;
+        }
+
+        .footer-div {
+            display: flex;
+            justify-content: space-between;
+
+            @include sm {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about-contact-time-div {
+                display: flex;
+                gap: 50px;
+                width: 50%;
+
+                @include sm {
+                    font-size: map-get($map: $fontSizes, $key: xs);
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 10px;
+                }
+
+                .about-info {
+                    width: 40%;
+
+                    @include xs {
+                        width: 100%;
+                    }
+
+                    h2 {
+                        text-transform: capitalize;
+                    }
+
+                    .brand-logo {
+                        @include sm {
+                            display: none;
+                        }
+                    }
+                }
+
+                .contact-time-info-div {
+                    .contact-info {
+                        margin-bottom: 35px;
+                    }
+
+                    h2 {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            .menu-categories-info-div {
+                display: flex;
+                justify-content: space-between;
+                gap: 50px;
+                width: 40%;
+
+                @include sm {
+                    font-size: map-get($map: $fontSizes, $key: xs);
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 10px;
+                }
+
+                h2 {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+
+
+// burger btn animation
+@keyframes top-close {
+    0% {
+        transform: rotate(0) translateX(0);
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(5.5px);
+    }
+}
+
+@keyframes top-open {
+    0% {
+        transform: rotate(45deg) translateX(5.5px);
+    }
+
+    100% {
+        transform: rotate(0) translateX(0);
+    }
+}
+
+@keyframes middle-close {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes middle-open {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bottom-close {
+    0% {
+        transform: rotate(0) translateX(0);
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(5.5px);
+    }
+}
+
+@keyframes bottom-open {
+    0% {
+        transform: rotate(-45deg) translateX(5.5px);
+    }
+
+    100% {
+        transform: rotate(0) translateX(0);
+    }
+}

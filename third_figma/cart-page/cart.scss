@@ -1,0 +1,400 @@
+@import '../styles/base';
+
+.place-order-section {
+    padding: 10px var(--main-padding);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        line-height: 140%;
+        letter-spacing: 0.25px;
+    }
+
+    .place-order-div {
+        display: flex;
+        justify-content: space-between;
+
+        @include sm {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .payment-price-method-div {
+            flex: 0.4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .price-details-div {
+                background-color: map-get($map: $colors, $key: secondary);
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .item-price {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .total-price {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                span {
+                    font-size: map-get($map: $fontSizes, $key: md);
+                    font-weight: map-get($map: $fontWeights, $key: light);
+                    line-height: 140%;
+                    letter-spacing: 0.15px;
+                }
+            }
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: space-between;
+
+            &.mobile {
+                display: none;
+
+                @include sm {
+                    display: flex;
+                }
+            }
+
+            @include sm {
+                display: none;
+            }
+
+            input {
+                cursor: pointer;
+
+                &:checked {
+                    accent-color: map-get($map: $colors, $key: secondary);
+                }
+            }
+
+            img {
+                width: 150px;
+                height: 60px;
+            }
+
+            .click-method {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .payme-method {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        .place-order-form {
+            flex: 0.4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            button {
+                padding: 18px 15px;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.your-orders-section {
+    padding: 10px var(--main-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        line-height: 140%;
+        letter-spacing: 0.25px;
+    }
+
+    .order-details {
+        display: flex;
+        background-color: map-get($map: $colors, $key: third);
+        border-radius: 10px;
+
+        .white-hoodie-img {
+            width: 264px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: top;
+
+            @include sm {
+                width: 90px;
+            }
+        }
+
+        .order-info-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            padding: 25px;
+
+            @include sm {
+                padding: 10px;
+            }
+
+            .order-title-close-sign-div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h3 {
+                    font-size: map-get($map: $fontSizes, $key: lg);
+                    font-weight: map-get($map: $fontWeights, $key: bolder);
+                    line-height: 140%;
+
+                    @include sm {
+                        font-size: map-get($map: $fontSizes, $key: sm);
+                        letter-spacing: 0.75px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .close-sign {
+                    font-size: map-get($map: $fontSizes, $key: xl);
+                    cursor: pointer;
+
+                    @include sm {
+                        display: none;
+                    }
+                }
+            }
+
+            .rating-paragraph-div {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                @include sm {
+                    display: none;
+                }
+
+                p {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: light);
+                    line-height: 160%;
+                    letter-spacing: 0.25px;
+                }
+            }
+
+            .price-size-count-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-right: 15px;
+
+                @include sm {
+                    padding-right: 0;
+                    flex-direction: column;
+                    align-items: normal;
+                }
+
+                .order-price-size-div {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 40px;
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: light);
+                    line-height: 140%;
+                    letter-spacing: 0.44px;
+
+                    .order-size {
+                        .size-number {
+                            font-size: map-get($map: $fontSizes, $key: md);
+                            font-weight: map-get($map: $fontWeights, $key: bolder);
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+                .count-element-div {
+                    width: 20%;
+
+                    @include md {
+                        width: 25%;
+                    }
+
+                    @include sm {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                    }
+
+                    .trash-bin-div {
+                        display: none;
+                        background-color: map-get($map: $colors, $key: card-bg);
+                        border-radius: 5px;
+                        padding: 5px;
+
+                        @include sm {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+
+                    .count-control-div {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        text-align: center;
+
+                        @include sm {
+                            width: 45%;
+                        }
+
+                        .minus,
+                        .plus {
+                            width: 22%;
+                            background-color: map-get($map: $colors, $key: secondary);
+                            padding: 7px 0;
+                            cursor: pointer;
+
+                            @include sm {
+                                width: 28%;
+                            }
+                        }
+
+                        .order-count {
+                            width: 58%;
+                            background-color: map-get($map: $colors, $key: card-bg);
+                            padding: 7px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stores-section {
+    padding: 10px var(--main-padding);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        line-height: 140%;
+        letter-spacing: 0.25px;
+    }
+
+    .stores-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(80px, 100px);
+        gap: 20px;
+
+        @include sm {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-color: map-get($map: $colors, $key: card-bg);
+            padding: 15px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.different-brands-section {
+    padding: 10px var(--main-padding);
+    margin-bottom: 50px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+        line-height: 140%;
+        letter-spacing: 0.25px;
+    }
+
+    .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(60px, 80px);
+        gap: 20px;
+
+        @include sm {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+
+            @include sm {
+
+                &:nth-child(1),
+                &:nth-child(6),
+                &:nth-child(11),
+                &:nth-child(16) {
+                    margin-top: 30px;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .brand-type-name {
+            background-color: map-get($map: $colors, $key: secondary);
+
+            &:hover {
+                background-color: color-mix(in srgb, map-get($map: $colors, $key: secondary) 50%, white 50%);
+            }
+
+            span {
+                font-size: map-get($map: $fontSizes, $key: md);
+                font-weight: map-get($map: $fontWeights, $key: bolder);
+                line-height: 140%;
+                letter-spacing: 0.15px;
+                text-align: center;
+
+                @include xl {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                }
+            }
+        }
+
+        .brand-card {
+            background-color: map-get($map: $colors, $key: card-bg);
+            padding: 15px;
+        }
+    }
+}

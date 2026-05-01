@@ -1,0 +1,39 @@
+// font family
+$main-font: 'Montserrat';
+
+// main pading(left/right)
+$main-padding-left-right: 148px;
+
+// font sizes
+$fontSizes : (
+    'xxs': 10px,
+    'xs' : 13px,
+    'sm' : 16px,
+    'md' : 18px,
+    'lg' : 26px,
+    'xl' : 34px,
+);
+
+// font weights
+$fontWeights: (
+    'light' : 400,
+    'normal': 500,
+    'bold'  : 600,
+    'bolder': 700,
+);
+
+$colors: (
+    // text colors
+    'primary'   : #000000,
+    'secondary' : #FFC000,
+    'third'     : #FFFFFF,
+
+    'main-bg' : #F2F3F7,
+    'headr-bg': #FAFAFA,
+    'banner-bg-1' : #E1AA00,
+    'banner-bg-2' : #FFC000,
+    'card-bg' : color-mix(in srgb, black 10%, white 90%),
+
+    'phone-app-bg-1': #0F0D2B,
+    'phone-app-bg-2': #0C0926,
+);
