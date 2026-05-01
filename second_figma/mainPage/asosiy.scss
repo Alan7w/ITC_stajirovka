@@ -1,0 +1,254 @@
+@import '../styles/base';
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7% 3%;
+
+    @include lg {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5% 2%;
+    }
+
+    @include md {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3% 1%;
+    }
+
+    .users-count-card,
+    .orders-count-card,
+    .sms-count-card,
+    .service-type-card {
+        background-color: map-get($map: $colors, $key: main-bg);
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.06);
+
+        h1 {
+            color: map-get($map: $colors, $key: secondary);
+            font-size: map-get($map: $fontSizes, $key: lg);
+            font-weight: map-get($map: $fontWeights, $key: bold);
+            letter-spacing: 1%;
+
+            @include lg {
+                font-size: map-get($map: $fontSizes, $key: md);
+            }
+
+            @include sm {
+                font-size: map-get($map: $fontSizes, $key: sm);
+            }
+        }
+
+        p {
+            font-size: map-get($map: $fontSizes, $key: md);
+            font-weight: map-get($map: $fontWeights, $key: bold);
+            letter-spacing: 1%;
+
+            @include lg {
+                font-size: map-get($map: $fontSizes, $key: sm);
+            }
+
+            @include sm {
+                font-size: map-get($map: $fontSizes, $key: xs);
+            }
+        }
+    }
+
+    .orders-summary-card {
+        grid-column: 1 / -1;
+        padding: 35px;
+        background-color: map-get($map: $colors, $key: main-bg);
+        border-radius: 50px;
+        box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.06);
+
+        @include xl {
+            padding: 30px;
+        }
+
+        @include lg {
+            padding: 25px;
+        }
+
+        @include md {
+            padding: 20px;
+        }
+
+        .orders-summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            h1 {
+                font-weight: map-get($map: $fontWeights, $key: bold);
+                font-size: map-get($map: $fontSizes, $key: xl);
+
+                @include lg {
+                    font-size: map-get($map: $fontSizes, $key: lg);
+                }
+
+                @include md {
+                    font-size: map-get($map: $fontSizes, $key: md);
+                }
+
+                @include sm {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                }
+            }
+
+            .custom-dropdown-menu {
+                position: relative;
+
+                .dropdown-menu-toggle-input {
+                    display: none;
+
+                    &:checked~.dropdown-menu-options {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+
+                    &:checked~.dropdown-menu-label .dropdown-arrow {
+                        transform: rotate(-180deg);
+                    }
+                }
+
+                .dropdown-menu-label {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 20px 15px;
+                    cursor: pointer;
+                    font-size: map-get($map: $fontSizes, $key: md);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+
+                    &:hover {
+                        background-color: map-get($map: $colors, $key: light-gray);
+                        border-radius: 10px;
+                    }
+
+                    .current-selected-option {
+                        font-size: 0;
+
+                        &::after {
+                            font-size: map-get($map: $fontSizes, $key: md);
+                            font-weight: map-get($map: $fontWeights, $key: normal);
+                        }
+                    }
+
+                    .dropdown-arrow {
+                        transition: transform 0.3s ease;
+                    }
+                }
+
+                .dropdown-menu-options {
+                    position: absolute;
+                    top: 90%;
+                    right: -35px;
+                    background-color: map-get($map: $colors, $key: main-bg);
+                    border-radius: 10px;
+                    padding: 10px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    z-index: 1;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-15px);
+                    transition: all 0.3s ease;
+
+                    .dropdown-option {
+                        font-size: map-get($map: $fontSizes, $key: md);
+                        font-weight: map-get($map: $fontWeights, $key: normal);
+                        cursor: pointer;
+                        display: block;
+                        padding: 5px 25px;
+                        margin: 5px 0;
+                        transition: all 0.5s ease;
+
+                        &:hover {
+                            background-color: map-get($map: $colors, $key: light-gray);
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter-radio {
+            display: none;
+        }
+
+        #filter-oylik:checked~.orders-summary-header .current-selected-option::after {
+            content: "Oylik";
+        }
+        #filter-haftalik:checked~.orders-summary-header .current-selected-option::after {
+            content: "Haftalik";
+        }
+        #filter-yillik:checked~.orders-summary-header .current-selected-option::after {
+            content: "Yillik";
+        }
+
+        .orders-summary-content {
+            display: none;
+            justify-content: space-between;
+            margin: 40px 0;
+            margin-left: 40px;
+            width: 100%;
+
+            @include lg {
+                width: 90%;
+                margin: 30px 20px;
+            }
+
+            @include md {
+                flex-wrap: wrap;
+                gap: 30px 50px;
+            }
+
+            @include sm {
+                width: 95%;
+                margin-left: 10px;
+                gap: 20px 40px;
+            }
+
+            @include xs {
+                margin-left: 0;
+                gap: 20px;
+            }
+
+            div {
+                p {
+                    font-size: map-get($map: $fontSizes, $key: md);
+                    font-weight: map-get($map: $fontWeights, $key: bold);
+                    letter-spacing: 1%;
+
+                    @include sm {
+                        font-size: map-get($map: $fontSizes, $key: xs);
+                    }
+                }
+
+                h1 {
+                    font-size: map-get($map: $fontSizes, $key: lg);
+                    font-weight: map-get($map: $fontWeights, $key: bold);
+                    letter-spacing: 1%;
+
+                    @include sm {
+                        font-size: map-get($map: $fontSizes, $key: md);
+                    }
+                }
+            }
+        }
+
+        #filter-oylik:checked~.content-oylik {
+            display: flex;
+        }
+        #filter-haftalik:checked~.content-haftalik {
+            display: flex;
+        }
+        #filter-yillik:checked~.content-yillik {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,268 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Proxima%20Nova');
+// breakpoints
+@import '../styles/breakpoints';
+// variables
+@import '../styles/variables';
+// styles
+@import '../styles/headerAndSidebar';
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: $main-font;
+    color: map-get($map: $colors, $key: primary);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: map-get($map: $colors, $key: main-bg);
+}
+
+button {
+    background-color: map-get($map: $colors, $key: btn-primary);
+    color: map-get($map: $colors, $key: third);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: map-get($map: $fontSizes, $key: sm);
+    font-weight: map-get($map: $fontWeights, $key: bolder);
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+    padding: 10px 15px;
+    text-wrap: nowrap;
+
+    @include sm {
+        padding: 7px 10px;
+        margin: 0;
+        font-size: map-get($map: $fontSizes, $key: xs);
+    }
+
+    &:hover {
+        background-color: color-mix(in srgb, map-get($map: $colors, $key: btn-primary) 90%, white 10%);
+    }
+}
+
+.form-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+
+    h1 {
+        font-size: map-get($map: $fontSizes, $key: xl);
+        font-weight: map-get($map: $fontWeights, $key: bolder);
+
+        @include md {
+            font-size: map-get($map: $fontSizes, $key: lg);
+        }
+
+        @include xs {
+            font-size: map-get($map: $fontSizes, $key: md);
+        }
+    }
+}
+
+.form-footer {
+    margin: 5px;
+    font-size: map-get($map: $fontSizes, $key: xs);
+
+    a {
+        color: map-get($map: $colors, $key: secondary);
+    }
+}
+
+.back-btn {
+    text-decoration: none;
+    font-size: map-get($map: $fontSizes, $key: xl);
+    font-weight: map-get($map: $fontWeights, $key: bold);
+    margin: 30px;
+    display: inline-block;
+
+    transition: all 0.2s ease;
+
+    @include md {
+        margin: 10px 0;
+        margin-left: 50px;
+        font-size: map-get($map: $fontSizes, $key: sm);
+    }
+
+    &:hover {
+        transform: translateX(-10px);
+
+    }
+
+    img {
+        vertical-align: middle;
+        width: 28px;
+        height: 23px;
+
+        @include md {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include md {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+label {
+    font-size: map-get($map: $fontSizes, $key: xs);
+    font-weight: map-get($map: $fontWeights, $key: bold);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+input {
+    background-color: map-get($map: $colors, $key: input-field);
+    border-radius: 5px;
+    border: none;
+    font-size: map-get($map: $fontSizes, $key: sm);
+    font-weight: map-get($map: $fontWeights, $key: normal);
+    width: 100%;
+    margin: 3px 0;
+    padding: 10px 35px;
+    box-sizing: border-box;
+
+    @include sm {
+        padding: 8px 25px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &[type="password"] {
+        letter-spacing: 2px;
+    }
+
+    &:hover {
+        background-color: color-mix(in srgb, gray 50%, white 50%);
+    }
+
+    &:focus {
+        background-color: map-get($map: $colors, $key: input-field);
+    }
+}
+
+table {
+    background-color: map-get($map: $colors, $key: nav-bg);
+    width: 100%;
+    border-spacing: 0;
+    text-wrap: nowrap;
+
+    thead {
+        overflow-x: hidden;
+        height: auto;
+    }
+
+    th,
+    td {
+        padding: 8px 15px;
+        border-right: 2px solid map-get($map: $colors, $key: light-gray);
+
+        &:first-child {
+            text-align: center;
+        }
+    }
+
+    th {
+        border-bottom: 2px solid map-get($map: $colors, $key: light-gray);
+        font-size: map-get($map: $fontSizes, $key: sm);
+        font-weight: map-get($map: $fontWeights, $key: bold);
+    }
+
+    td {
+        font-size: map-get($map: $fontSizes, $key: xs);
+        font-weight: map-get($map: $fontWeights, $key: normal);
+
+        &:first-child input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            accent-color: map-get($map: $colors, $key: secondary);
+        }
+    }
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .popup-backdrop {
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .popup-content {
+            background-color: map-get($map: $colors, $key: main-bg);
+            border-radius: 15px;
+            text-align: center;
+            padding: 4% 2%;
+            width: 40%;
+
+            @include lg {
+                width: 50%;
+            }
+
+            @include md {
+                width: 60%;
+            }
+
+            @include sm {
+                width: 80%;
+            }
+
+            .popup-logo {
+                margin: 30px auto;
+            }
+
+            h1 {
+                color: map-get($map: $colors, $key: secondary);
+                letter-spacing: 1%;
+                font-size: map-get($map: $fontSizes, $key: lg);
+                font-weight: map-get($map: $fontWeights, $key: bold);
+            }
+
+            button {
+                margin: 30px auto;
+                width: 37%;
+
+                @include lg {
+                    width: 50%;
+                }
+
+                @include md {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

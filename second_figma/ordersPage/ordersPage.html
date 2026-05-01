@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orders.css">
+    <title>Buyurtmalar</title>
+</head>
+
+<body>
+    <input type="checkbox" class="sidebar-toggle-input" id="sidebar-toggle">
+    <div class="page-wrapper">
+        <!-- sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../icons/main-logo.svg" alt="main-logo" class="main-logo">
+                <h1 class="main-logo-text"> Ideal Cleaning</h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../mainPage/asosiy.html" class="navlink not-active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/asosiy-not-active.svg" alt="asosiy-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>Asosiy</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="../ordersPage/ordersPage.html" class="navlink active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/buyurtmalar-active.svg" alt="buyurtmalar-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>Buyurtmalar</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="customers.html" class="navlink not-active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/mijozlar-not-active.svg" alt="mijozlar-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>Mijozlar</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="SMSmarketing.html" class="navlink not-active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/SMSmarketing-not-active.svg" alt="sms-marketing-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>SMS marketing</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="services.html" class="navlink not-active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/xizmatlar-not-active.svg" alt="xizmatlar-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>Xizmatlar</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="settings.html" class="navlink not-active">
+                    <div class="navlink-container">
+                        <div class="navlink-logos">
+                            <img src="../icons/sidebar/sozlamalar-not-active.svg" alt="sozlamalar-link">
+                        </div>
+                        <div class="navlink-texts">
+                            <span>Sozlamalar</span>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- header and main -->
+        <div class="page-content">
+            <header class="header-area">
+                <div class="header-nav">
+                    <div class="buyurtma-qidiruv-div">
+                        <label for="sidebar-toggle" class="burger-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <button onclick="window.location.href='../ordersPage/addOrderPage.html'">Buyurtma
+                            qo'shish</button>
+                        <input type="text" placeholder="Qidiruv" class="qidiruv-input">
+                    </div>
+
+                    <div class="avatar-notification-div">
+                        <img src="../icons/notification.svg" alt="notification-logo" class="notification">
+
+                        <div class="avatar-container">
+                            <img src="../img/avatar.png" alt="avatar" class="avatar">
+                            <div class="avatar-dropdown">
+                                <div class="avatar-dropdown-header">
+                                    <img src="../img/avatar.png" alt="avatar" class="dropdown-avatar">
+                                    <span class="admin-text">Admin</span>
+                                </div>
+
+                                <div class="avatar-dropdown-content">
+                                    <a href="../loginPage/forgotPasswordPage.html" class="dropdown-link password">
+                                        <img src="../icons/change-password-icon.svg" alt="change-password-icon"
+                                            class="dropdown-icon">
+                                        Parolni o'zgartirish
+                                    </a>
+
+                                    <a href="../loginPage/loginPage.html" class="dropdown-link logout">
+                                        <img src="../icons/logout-icon.svg" alt="logout-icon" class="dropdown-icon">
+                                        Chiqish
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="filter-bar">
+                    <section class="sort-type-and-order">
+                        <div class="sort-item-div">
+                            <p>Saralash:</p>
+                            <select name="sort-type" id="type-sort" class="type-sort">
+                                <option value="">Status</option>
+                            </select>
+                        </div>
+                        <div class="sort-item-div">
+                            <p>Saralash turi:</p>
+                            <select name="sort-order" id="order-sort" class="order-sort">
+                                <option value="">O'sish</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <section class="table-pagination">
+                        <p>1-10 <span class="gacha-text">gacha</span> /659 <span class="pagination-arrow">&lt;</span>
+                            <span class="pagination-arrow">&gt;</span>
+                        </p>
+                    </section>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Ism Sharifi</th>
+                                <th>Xizmat turi</th>
+                                <th>Buyurtirildi</th>
+                                <th>Tugatildi</th>
+                                <th>Status</th>
+                                <th>Narxi(so'm)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody >
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Bekzod Buyukov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tayyor</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Olib ketildi</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tayyor</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tayyor</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tayyor</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tayyor</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+                            <tr  class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+
+
+                            <tr class="odd-row">
+                                <td><input type="checkbox"></td>
+                                <td>Javlon Ravshanov</td>
+                                <td>Ko'ylak</td>
+                                <td>04.01.2020</td>
+                                <td>15.01.2020</td>
+                                <td>Tozalanmoqda</td>
+                                <td>30 000</td>
+                                <td class="action-icons-div">
+                                    <img src="../icons/mail.svg" alt="mail-logo" class="action-icon">
+                                    <a href="#delete-popup" class="action-icon">
+                                        <img src="../icons/trash-bin.svg" alt="trash-bin-logo">
+                                    </a>
+                                    <img src="../icons/pencil-logo.svg" alt="pencil-logo" class="action-icon">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <section id="delete-popup" class="popup-overlay">
+                <div class="popup-backdrop">
+                    <div class="popup-content delete-popup-content">
+                        <h1 id="delete-popup-text">O'chirishni tasdiqlang!</h1>
+
+                        <div class="delete-popup-buttons">
+                            <a href="#" class="delete-confirm-btn">Ha</a>
+                            <a href="#" class="delete-cancel-btn">Yo'q</a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

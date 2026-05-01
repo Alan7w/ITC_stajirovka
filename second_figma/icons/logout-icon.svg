@@ -1,0 +1,11 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="exit">
+<path id="Rectangle 2 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M4.52197 5.87856C4.52197 5.12934 5.12934 4.52197 5.87856 4.52197H22.0446C22.7938 4.52197 23.4012 5.12934 23.4012 5.87856V29.3928C23.4012 30.142 22.7938 30.7494 22.0446 30.7494H5.87856C5.51877 30.7494 5.17372 30.6064 4.91931 30.352C4.6649 30.0976 4.52197 29.7526 4.52197 29.3928V5.87856ZM7.23515 7.23515V28.0362H20.688V7.23515H7.23515Z" fill="#2389DA"/>
+<g id="Icon/arrow-right">
+<g id="Icon/arrow-down">
+<path id="Path 2" d="M18.3711 17.6358H31.5978" stroke="#2389DA" stroke-linecap="round"/>
+<path id="Path 3" d="M27.189 22.0447L31.5979 17.6358L27.189 13.2268" stroke="#2389DA" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,42 @@
+// font family
+$main-font: 'Proxima Nova', Arial, sans-serif;
+
+// sidebar variables
+$sidebar-width-open: 18%;
+$sidebar-width-closed: 5%;
+$header-height: 60px;
+
+// font sizes
+$fontSizes : (
+    'xs' : 12px,
+    'sm' : 16px,
+    'md' : 18px,
+    'lg' : 20px,
+    'xl' : 24px,
+);
+
+// font weights
+$fontWeights: (
+    'normal': 400,
+    'bold': 600,
+    'bolder': 700,
+);
+
+$colors: (
+    // text colors
+    'primary' : #000000,
+    'secondary' : #2389DA,
+    'third' : #FFFFFF,
+
+    'error-txt' : #D91D1D,
+
+    // background colors
+    'main-bg' : #FFFFFF,
+    'nav-bg' : #F9F9F9,
+    'btn-primary' : #2389DA,
+    'btn-secondary' : #109CF1,
+    'login-primary' : #80A5D1,
+    'login-secondary' : #5287D5,
+    'input-field' : #E5E5E5,
+    'light-gray' : #E2E2E2,
+);

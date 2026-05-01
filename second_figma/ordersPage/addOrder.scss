@@ -1,0 +1,185 @@
+@import '../styles/base';
+
+.add-order {
+    position: relative;
+
+    .add-order-form {
+        @include xl {
+            width: 38%
+        }
+
+        @include lg {
+            width: 50%
+        }
+
+        @include md {
+            width: 65%
+        }
+
+        @include sm {
+            width: 80%
+        }
+
+        @include xs {
+            width: 90%
+        }
+
+        .name-input {
+            font-size: map-get($map: $fontSizes, $key: sm);
+
+            @include md {
+                font-size: map-get($map: $fontSizes, $key: xs);
+            }
+        }
+
+
+        .custom-select {
+            position: relative;
+
+            .custom-select-toggle-input {
+                display: none;
+
+                &:checked~.custom-select-toggle-label .custom-select-dropdown-arrow {
+                    transform: rotate(180deg);
+                }
+
+                &:checked~.custom-select-options {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+            }
+
+            .custom-select-radio {
+                display: none;
+            }
+
+            #option-tozalanmoqda:checked~.custom-select-toggle-label .custom-select-current-selected-value::after {
+                content: "Tozalanmoqda";
+            }
+
+            #option-tayyor:checked~.custom-select-toggle-label .custom-select-current-selected-value::after {
+                content: "Tayyor";
+            }
+
+            #option-olib-ketildi:checked~.custom-select-toggle-label .custom-select-current-selected-value::after {
+                content: "Olib ketildi";
+            }
+
+            .custom-select-toggle-label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: map-get($map: $colors, $key: input-field);
+                cursor: pointer;
+                padding: 10px 35px;
+                border-radius: 5px;
+
+                @include sm {
+                    padding: 7px 25px;
+                }
+
+                .custom-select-current-selected-value::after {
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+                }
+
+                .custom-select-dropdown-arrow {
+                    padding: 7px 0;
+                    transition: transform 0.2s ease;
+                }
+            }
+
+            .custom-select-options {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                background-color: map-get($map: $colors, $key: input-field);
+                transform: translateY(-15px);
+                transition: all 0.2s ease;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+                top: 90%;
+                width: 100%;
+
+                .custom-select-option {
+                    cursor: pointer;
+                    display: block;
+                    padding: 8px 35px;
+                    transition: all 0.4s ease;
+                    font-size: map-get($map: $fontSizes, $key: sm);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+
+                    @include sm {
+                        padding: 5px 25px;
+                    }
+
+                    &:hover {
+                        background-color: map-get($map: $colors, $key: login-primary);
+                    }
+                }
+            }
+        }
+
+        .form-submit-wrapper {
+            width: 100%;
+
+            .btn-error-link,
+            .btn-confirmation-link {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                background-color: map-get($map: $colors, $key: btn-primary);
+                color: map-get($map: $colors, $key: third);
+                cursor: pointer;
+                border-radius: 10px;
+                font-size: map-get($map: $fontSizes, $key: sm);
+                font-weight: map-get($map: $fontWeights, $key: bolder);
+                padding: 10px 15px;
+                text-wrap: nowrap;
+
+                @include sm {
+                    font-size: map-get($map: $fontSizes, $key: xs);
+                }
+
+                &:hover {
+                    background-color: color-mix(in srgb, map-get($map: $colors, $key: btn-primary) 90%, white 10%);
+                }
+            }
+
+            .btn-confirmation-link {
+                display: none;
+            }
+        }
+
+        &:valid .btn-error-link {
+            display: none;
+        }
+
+        &:valid .btn-confirmation-link {
+            display: block;
+        }
+    }
+}
+
+.error-popup-content {
+    position: relative;
+
+    .error-popup-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        text-decoration: none;
+        font-size: map-get($map: $fontSizes, $key: xl);
+        opacity: 0.3;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    #error-popup-text {
+        color: map-get($map: $colors, $key: error-txt);
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="signUpPage.css">
+        <title>Sign Up</title>
+    </head>
+
+    <body>
+        <section class="sign-up">
+            <a class="back-btn" href="loginPage.html"><img src="../icons/back-btn.svg" alt="back-button"> Ortga</a>
+            <div class="form-div">
+                <h1>Ro'yhatdan o'tish</h1><br><br>
+                <form action="../mainPage/asosiy.html" class="sign-up-form">
+                    <label for="sign-up-name" class="name-input">Ismingiz</label>
+                    <input type="text" id="sign-up-name" placeholder="ismingizni kiriting..." required><br><br>
+
+                    <label for="sign-up-number">Telefon raqamingiz</label>
+                    <input type="text" id="sign-up-number" placeholder="teleon raqamingizni kiriting..." required><br><br>
+                    
+                    <label for="sign-up-email">Email</label>
+                    <input type="email" id="sign-up-email" placeholder="emailingizni kiriting..." required><br><br>
+
+                    <label for="sign-up-password">Parol</label>
+                    <input type="password" id="sign-up-password" placeholder="parol kiriting..." required><br><br>
+                    
+                    <label for="sign-up-password-confirm">Parolni tasdiqlash</label>
+                    <input type="password" id="sign-up-password-confirm" placeholder="parol qayta kiriting..." required><br><br>
+
+                    <button type="submit">Ro'yxatdan o'tish</button>
+                </form>
+                <p class="form-footer">Ro'yxatdan o'tganmisiz? <a href="loginPage.html">Tizimga kirish</a></p>
+            </div>
+        </section>
+    </body>
+</html>

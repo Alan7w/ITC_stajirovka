@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addOrder.css">
+    <title>Add Order</title>
+</head>
+
+<body>
+    <section class="add-order">
+        <a class="back-btn" href="ordersPage.html"><img src="../icons/back-btn.svg" alt="back-button"> Ortga</a>
+        <div class="form-div">
+            <h1>Buyurtma ma‘lumotlari</h1><br><br>
+            <form class="add-order-form">
+                <label for="add-order-name" class="name-input">Mijoz ismi sharifi</label>
+                <input type="text" id="add-order-name" placeholder="I.F.Sh.ni kiriting..." required><br><br>
+
+                <label for="add-order-service-type">Xizmat turi</label>
+                <input type="text" id="add-order-service-type" placeholder="xizmat turini kiriting..." required><br><br>
+
+                <label for="add-order-book-date">Buyurtirilgan sana</label>
+                <input type="text" lang="uz" id="add-order-book-date" pattern="\d{2}\/\d{2}\/\d{4}"
+                    placeholder="kun/oy/yil" required><br><br>
+
+                <label for="add-order-ready-date">Qachon tayyor bo'ladi</label>
+                <input type="text" id="add-order-ready-date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="kun/oy/yil"
+                    required><br><br>
+
+                <label for="custom-select">Xizmat holati</label>
+                <div class="custom-select">
+                    <input type="checkbox" id="custom-select-toggle" class="custom-select-toggle-input">
+                    <input type="radio" name="service-condition" id="option-tozalanmoqda" class="custom-select-radio"
+                        required>
+                    <input type="radio" name="service-condition" id="option-tayyor" class="custom-select-radio">
+                    <input type="radio" name="service-condition" id="option-olib-ketildi" class="custom-select-radio">
+
+                    <label for="custom-select-toggle" class="custom-select-toggle-label">
+                        <span class="custom-select-current-selected-value"></span>
+                        <img src="../icons/dropdown-arrow.svg" alt="dropdown-arrow-logo"
+                            class="custom-select-dropdown-arrow">
+                    </label>
+
+                    <div class="custom-select-options">
+                        <label for="option-tozalanmoqda" class="custom-select-option">Tozalanmoqda</label>
+                        <label for="option-tayyor" class="custom-select-option">Tayyor</label>
+                        <label for="option-olib-ketildi" class="custom-select-option">Olib ketildi</label>
+                    </div><br>
+                </div>
+
+                <label for="add-order-service-price">Xizmat narxi (so'm)</label>
+                <input type="text" id="add-order-service-price" placeholder="xizmat narxini kiriting..."
+                    required><br><br>
+                
+                <div class="form-submit-wrapper">
+                    <a href="#error-popup" class="btn-error-link">Buyurtmani qo'shish</a>
+                    <a href="#confirmation-popup" class="btn-confirmation-link">Buyurtmani qo'shish</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="confirmation-popup" class="popup-overlay">
+        <div class="popup-backdrop">
+            <div class="popup-content confirmation-popup-content">
+                <img src="../icons/confirmation-popup-logo.svg" class="popup-logo" alt="confirmation-popup-logo">
+                <h1>Buyurtma qo‘shildi!</h1>
+                <button onclick="window.location.href='ordersPage.html'">Davom etish</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="error-popup" class="popup-overlay">
+        <div class="popup-backdrop">
+            <div class="popup-content error-popup-content">
+                <a href="#" class="error-popup-close-btn">&times;</a>
+                <img src="../icons/error-popup-logo.svg" class="popup-logo" alt="error-popup-logo">
+                <h1 id="error-popup-text">Bo'sh joylarni to'ldiring!</h1>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

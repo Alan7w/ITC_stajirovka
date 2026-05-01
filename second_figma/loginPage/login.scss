@@ -1,0 +1,104 @@
+// base styles
+@import '../styles/base';
+
+.sign-in {
+    display: block;
+    height: 100vh;
+
+    .banner {
+        width: 100%;
+        background-color: map-get($map: $colors, $key: login-primary);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        position: relative;
+
+        .banner-img {
+            width: 37%;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 1rem;
+            z-index: 1;
+
+            @include lg {
+                width: 45%;
+            }
+
+            @include md {
+                width: 65%;
+            }
+
+            @include sm {
+                width: 75%;
+            }
+
+            @include xs {
+                width: 85%;
+            }
+        }
+
+        .banner-bottom {
+            position: absolute;
+            width: 100%;
+            height: 9.3%;
+            background-color: map-get($map: $colors, $key: login-secondary);
+        }
+    }
+
+    .form-div {
+        .login-header {
+            padding: 25px;
+            font-size: map-get($map: $fontSizes, $key: lg);
+            font-weight: map-get($map: $fontWeights, $key: bolder);
+
+            @include sm {
+                font-size: map-get($map: $fontSizes, $key: md);
+            }
+
+            @include xs {
+                font-size: map-get($map: $fontSizes, $key: sm);
+            }
+        }
+
+        .sign-in-form {
+            width: 28%;
+
+
+            @include xl {
+                width: 35%;
+            }
+
+            @include lg {
+                width: 45%;
+            }
+
+            @include md {
+                width: 60%;
+            }
+
+            @include sm {
+                width: 75%;
+            }
+
+            @include xs {
+                width: 90%;
+            }
+
+            .email-label {
+                font-size: map-get($map: $fontSizes, $key: sm);
+            }
+
+            .passpword-label-div {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 15px;
+
+                a {
+                    text-decoration: none;
+                    font-size: map-get($map: $fontSizes, $key: xs);
+                    font-weight: map-get($map: $fontWeights, $key: normal);
+                }
+            }
+        }
+    }
+}

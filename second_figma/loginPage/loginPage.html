@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="login.css">
+        <title>Login</title>
+    </head>
+    
+    <body>
+        <section class="sign-in">
+            <div class="banner">
+                <div class="banner-bottom"></div>
+                <img src="../img/login-bg-img.png" alt="banner-image" class="banner-img">
+            </div>
+
+            <div class="form-div">
+                <h1 class="login-header">Tizimga kirish</h1>
+                <form action="../mainPage/asosiy.html" class="sign-in-form">
+                    <label for="sign-in-email" class="email-label">Email</label><br>
+                    <input type="email" id="sign-in-email" class="email-input" placeholder="emailingizni kiriting..." required>
+
+                    <div class="passpword-label-div">
+                        <label for="sign-in-password">Parol</label>
+                        <a href="forgotPasswordPage.html">Parolni unutdingizmi?</a>
+                    </div>
+                    <input type="password" id="sign-in-password" class="password-input" placeholder="parolni kiriting..." required><br>
+
+                    <button type="submit">Tizimga kirish</button>
+                </form>
+                <p class="form-footer">Hisobingiz yo'qmi? <a href="signUpPage.html">Ro'yxatdan o'tish</a></p>
+            </div>
+        </section>
+    </body>
+</html>

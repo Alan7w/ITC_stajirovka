@@ -1,0 +1,34 @@
+// base styles
+@import '../styles/base';
+
+.sign-up {
+    .form-div {
+        .sign-up-form {
+            width: 30%;
+
+            @include xl {
+                width: 38%
+            }
+
+            @include lg {
+                width: 50%
+            }
+
+            @include md {
+                width: 65%
+            }
+
+            @include sm {
+                width: 80%
+            }
+
+            @include xs {
+                width: 90%
+            }
+
+            .name-input {
+                font-size: map-get($map: $fontSizes, $key: sm);
+            }
+        }
+    }
+}
