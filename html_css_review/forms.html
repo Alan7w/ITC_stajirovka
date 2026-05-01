@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Forms</title>
+    </head>
+    <body>
+        <h2>Here we create different forms!</h2>
+
+        <form action="#">
+            <label for="username"></label>Enter your username: <br>
+            <input type="text" name="username" placeholder="username" required> <br><br>
+            
+            <label for="email"></label>Enter your email: <br>
+            <input type="email" name="email" placeholder="email" required> <br><br>
+
+            <label for="password">Enter password: </label> <br>
+            <input type="password" name="password" placeholder="password" required> <br><br>
+
+            <p>Select your <strong><em>age group</em></strong> below: </p>
+
+            <input type="radio" name="age" id="option1" value="0-25">
+            <label for="option1">0-25</label>
+            <input type="radio" name="age" id="option2" value="25-50">
+            <label for="option1">25-50</label>
+            <input type="radio" name="age" id="option3" value="50+">
+            <label for="option1">50+</label>
+
+            <br><br>
+
+            <label for="security_question">Select your security question: </label>
+            <select name="security_question" id="question">
+                <option value="q1">-- Select an option --</option>
+                <option value="q2">What is the name of your pet?</option>
+                <option value="q3">What color is the sky?</option>
+                <option value="q4">What is favourite hooby in one word?</option>
+            </select>
+            <br><br>
+
+            <label for="answer">Enter your answer here: </label>
+            <input type="text" name="answer" id="answer">
+            <br><br>
+
+            <label for="textArea">Your text goes below here: </label><br>
+            <textarea name="textarea" id="textArea" placeholder="about you ..." cols="30" rows="10"></textarea>
+            <br><br>
+
+            <input type="submit" value="Submit form">
+        </form>
+    </body>
+</html>

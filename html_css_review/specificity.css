@@ -1,0 +1,144 @@
+/* first problem */
+
+/* p {
+    this wins because there is no p element inside the article
+    color: red; 
+} */
+
+/* .article p {
+    color: blue;
+} */
+
+/* second problem */
+
+/* .nav {
+    color: red;
+} */
+
+/* #header {
+    this wins cause id > class
+    color: blue; 
+} */
+
+/* third problem */
+
+/* div p {
+    color: orange;
+} */
+
+/* .container p {
+    this wins cause class > elements
+    color: green; 
+} */
+
+/* fourth problem */
+
+/* #header .nav li a {color: aquamarine;}
+.nav li a {columns: purple;}
+li a {color: greenyellow;}
+a {color: brown;} */
+
+
+/* Complex Problems */
+
+/* 1) */
+.title {color: blue;}
+.card .title {color: green;}
+#card .title {color: red;} 
+/* RED wins cause id > class */
+
+/* 2) */
+.menu a {text-decoration: underline;}
+.menu .item {text-decoration: none;}
+.menu .item .link {text-decoration: overline;}
+/* OVERLINE wins cause 3 clases (30 points) > 2 classes (20 points) > one class and element (11 points) */
+
+/* 3) */
+p {font-weight: 400;}
+.note {font-weight: 600;}
+#note {font-weight: 300;}
+/* 300 wins cause id > class > element */
+
+/* 4) */
+.box span {color: purple;}
+span.label {color: orange;}
+.box .label {color: teal;}
+/* TEAL wins cause 2 classes (20 points) > one class and element (or vice-verca = 11 points) */
+
+/* 5) */
+.wrap .msg {margin: 20px;}
+.msg {margin: 10px;}
+@media (max-width: 1000px) {
+    .msg {margin: 0;}
+}
+/* 20px wins cause 2 classes (20 points) > one class (10 points)  */
+
+/* 6) */
+button.btn {opacity: 1;}
+.btn.primary {opacity: 0.8;}
+button:disabled {opacity: 0.4;}
+/* 0.8 wins cause .btn.primary = 20 points > the other two = 11 points each */
+
+/* 7) */
+a:hover {color: blue;}
+.nav-link:hover {color: red;}
+a.nav-link {color: green;}
+/* RED while hovering cause class + pseudo class = 20 points > the other two = 11 points each */
+
+/* 8) */
+input[type="text"] {border-width: 5px;}
+.field {border-width: 20px;}
+input.field {border-width: 40px;}
+/* 6px wins cause element+class (11 points) is same as the first rule but 6px comes later in code */
+
+/* 9) */
+.panel .text {letter-spacing: 2px;}
+.panel:not(.active) .text {letter-spacing: 6px;}
+.active .text {letter-spacing: 10px;}
+/* 10px wins cause 2 classes (20 points) is same as the first rule but 10px comes lates and 
+6px does not get applied at all even if we comment out the rest of the rules */
+
+/* 10) */
+.cell { padding: 10px; }
+span[data-x] { padding: 60px; }
+.row .cell[data-x="1"] { padding: 120px; }
+/* 12 px wins cause one class and attribute (20 points) > the other two (10 points each) */
+
+/* 11) */
+:is(.another_card, .panel) .title { color: blue; }
+.another_card .title { color: red; }
+/* RED wins cause these two have the same points (20 points each), moreover :is(.another_card, .panel) == .another_card */
+
+/* 12) */
+:where(.yet_another_card) .title { color: blue; }
+.yet_another_card .title { color: red; }
+/* RED wins cause :where() adds zero specificity */
+
+/* 13) */
+#t { color: red; }
+.t { color: blue; }
+/* NONE wins. The inline style wins */
+
+/* 14) */
+#a { color: red !important; }
+.a { color: blue !important; }
+/* RED wins cause accessing with ID and marking it as important */
+
+/* 15) */
+#another_box .x { font-size: 20px; }
+.another_box .x { font-size: 50px !important; }
+/* 10px wins cause !important has higher specificity than ID */
+
+/* 16) */
+
+
+/* 17) */
+
+
+/* 18) */
+
+
+/* 19) */
+
+
+/* 20) */

@@ -1,0 +1,64 @@
+/* p.error {
+    color: red;
+}
+
+p.success {
+    color: green;
+}
+
+p.success.feedback {
+    border: 2px dashed purple;
+}
+
+div#content {
+    background-color: rgb(174, 196, 217);
+    padding: 25px;
+} */
+
+
+/* div .success{
+    color: blue;
+}
+
+a[href*="youtube"] {
+    background-color:black;
+    color: aquamarine;
+    text-decoration:double ;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a[href*="gov"] {
+    color: white;
+    background-color: red;
+    border: 2px solid green;
+}
+
+a[href$=".com"] {
+    background-color:aqua;
+    color: crimson;
+    text-decoration:underline ;
+    font-weight: bold;
+    text-transform: uppercase;
+} */
+
+
+div {
+    color: lightsalmon;
+    font-weight: bold;
+    border: 2px solid crimson;
+    margin: 20px;
+    padding: 20px;
+}
+
+div p {
+    border: inherit;
+    margin: inherit;
+    padding: inherit;
+    color: crimson;
+}
+
+p {
+    color: orange;
+}
