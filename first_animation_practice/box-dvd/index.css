@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.box-wrapper {
+  border: 10px solid black;
+  background-color: dodgerblue;
+  height: 100%;
+}
+.box-wrapper .box {
+  width: 60px;
+  height: 60px;
+  background-color: blue;
+  animation: move-around 7s linear infinite, change-color 7s steps(1) infinite;
+}
+
+@keyframes move-around {
+  0% {
+    transform: translateY(0);
+    margin-left: 0;
+  }
+  25% {
+    transform: translateY(0);
+    margin-left: calc(100% - 60px);
+  }
+  50% {
+    transform: translateY(calc(100vh - 80px));
+    margin-left: calc(100% - 60px);
+  }
+  75% {
+    transform: translateY(calc(100vh - 80px));
+    margin-left: 0;
+  }
+  100% {
+    transform: translateY(0);
+    margin-left: 0;
+  }
+}
+@keyframes change-color {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: red;
+  }
+  50% {
+    background-color: green;
+  }
+  75% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: blue;
+  }
+}/*# sourceMappingURL=index.css.map */

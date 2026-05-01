@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: black;
+  position: relative;
+}
+main .circle .dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  animation: rotate-around 2s linear infinite;
+}
+
+@keyframes rotate-around {
+  0% {
+    transform: rotate(0) translate(170px);
+  }
+  100% {
+    transform: rotate(360deg) translate(170px);
+  }
+}/*# sourceMappingURL=index.css.map */

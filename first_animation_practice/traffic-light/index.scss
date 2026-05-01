@@ -1,0 +1,159 @@
+@import './base';
+
+.crossroad {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20%;
+
+    section {
+        background-color: rgb(169, 94, 2);
+    }
+
+    .traffic-light {
+        background-color: black;
+        animation: lights;
+        margin: 20px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .light {
+            width: 45px;
+            height: 45px;
+            border-radius: 50px;
+            background-color: white;
+            animation-duration: 10s;
+            animation-timing-function: steps(1);
+            animation-iteration-count: infinite;
+        }
+    }
+
+    .top,
+    .bottom {
+        display: flex;
+    }
+
+    .top.left {
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        .traffic-light {
+            width: 200px;
+            height: 80px;
+            flex-direction: row-reverse;
+        }
+
+        .light.red {
+            animation-name: horizontal-red;
+        }
+
+        .light.yellow {
+            animation-name: horizontal-yellow;
+        }
+
+        .light.green {
+            animation-name: horizontal-green;
+        }
+    }
+
+    .bottom.right {
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .traffic-light {
+            width: 80px;
+            height: 200px;
+            flex-direction: column;
+        }
+
+        .light.red {
+            animation-name: vertical-red;
+        }
+
+        .light.yellow {
+            animation-name: vertical-yellow;
+        }
+
+        .light.green {
+            animation-name: vertical-green;
+        }
+    }
+}
+
+@keyframes horizontal-green {
+    0% {
+        background-color: green;
+    }
+
+    33% {
+        background-color: white;
+    }
+}
+
+@keyframes horizontal-yellow {
+    0% {
+        background-color: white;
+    }
+
+    33% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: white;
+    }
+}
+
+@keyframes horizontal-red {
+    0% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes vertical-red {
+    0% {
+        background-color: red;
+    }
+
+    33% {
+        background-color: white;
+    }
+}
+
+@keyframes vertical-yellow {
+    0% {
+        background-color: white;
+    }
+
+    33% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: white;
+    }
+}
+
+@keyframes vertical-green {
+    0% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: white;
+    }
+}
