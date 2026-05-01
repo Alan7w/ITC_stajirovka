@@ -1,0 +1,6 @@
+| Level | Type                                  | Example                            |
+| ----- | ------------------------------------- | ---------------------------------- |
+| 1     | Inline styles                         | `<div style="color:red">`          |
+| 2     | IDs                                   | `#header`                          |
+| 3     | Classes / attributes / pseudo-classes | `.menu`, `[type="text"]`, `:hover` |
+| 4     | Elements / pseudo-elements            | `div`, `h1`, `::before`            |

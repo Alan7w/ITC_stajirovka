@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function changeText() {
+                document.getElementById("header1").innerText = "JavaScript is powerful!";
+            }
+
+            function changeColor() {
+                document.getElementById("header2").style["color"] = "red"
+            }
+
+            function removeX(str){
+                if (str.length == 1 && str[0] == 'x') {
+                    return 'xx'
+                }
+                let modifiedstr = ''
+                for (let i=0; i<str.length; i++) {
+                    if (str[i] != 'x') {
+                        modifiedstr += str[i]
+                    }
+                    if (str[i] == 'x') {
+                        if ((i == 0) || (i == str.length-1)) {
+                        modifiedstr += str[i]
+                        }
+                    }
+                }
+                document.getElementById("result").innerText = modifiedstr
+            }
+
+            function mixString(a, b){
+                let leftOver;
+                let difference = a.length - b.length
+                if (difference < 0) {
+                    leftOver = b.slice(a.length)
+                } else if (difference > 0) {
+                    leftOver = a.slice(b.length)
+                } else {
+                    leftOver = ''
+                }
+                let mergedString = ''
+                let determinedLength = difference <= 0 ? a.length : b.length
+                for (let i=0; i<determinedLength; i++) {
+                    mergedString += a[i] + b[i]
+                }
+                document.getElementById('mergedResult').innerText = mergedString + leftOver
+            }
+            
+            function sumDigits(str){
+                let sum = 0
+                let digits = []
+                for (let char of str) {
+                    if (!isNaN(char)) {
+                        sum += parseInt(char)
+                        digits.push(char)
+                    }
+                }
+                document.getElementById('digitSumResult').innerText = sum + " (Digits found: " + digits.join(", ") + ")"
+            }
+        </script>
+    </head>
+    <title>DOM Manipulation Exercises</title>
+    <body>
+        <div style="display: flex; flex-direction: row; gap: 50px;">
+            <div>
+                <h1 id="header1">Hello World</h1>
+                <button onclick="changeText()">Change Text</button>
+            </div>
+            
+
+            <div>
+                <h2 id="header2" style="color: blue;">Change my color</h2>
+                <button onclick="changeColor()">Change color</button>
+            </div>
+        </div>
+
+        <br><br>
+        <div>
+            <input type="text" id="inputText" oninput="removeX(this.value)" placeholder="Enter text to remove 'x's">
+            <button onclick="removeX(document.getElementById('inputText').value)">Remove 'x's</button>
+            <h3 id="result">Result will appear here!</h3>
+        </div>
+
+        <br><br>
+        <div>
+            <input type="text" id="inputA" placeholder="Enter your first string">
+            <input type="text" id="inputB" placeholder="Enter your second string">
+            <h3 id="mergedResult">Merged result will be here</h3>
+            <button onclick="mixString(document.getElementById('inputA').value, document.getElementById('inputB').value)">Merge Strings</button>
+            <button onclick="mixString(document.getElementById('inputB').value, document.getElementById('inputA').value)">Swap inputs</button>
+        </div>
+
+        <br><br>
+        <div id="digitSumDiv">
+            <input type="text" id="digitSumInput" placeholder="Enter a string to sum digits" oninput="sumDigits(this.value)">
+            <h3 id="digitSumResult">Sum will be here</h3>
+        </div>
+    </body>
+</html>
