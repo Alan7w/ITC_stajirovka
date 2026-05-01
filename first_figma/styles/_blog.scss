@@ -1,0 +1,178 @@
+// blog page
+#blog-page {
+    background-color: rgb(237, 237, 237);
+    padding-bottom: 60px;
+
+    @include lg {
+        height: auto;
+    }
+
+    article {
+        text-align: center;
+        padding: 40px;
+
+        @include sm {
+            padding: 20px;
+        }
+
+        .blog-header {
+            @include section-header($extra-large, $bolder, 24%, 93.8%);
+        }
+
+        .blog-header-text {
+            font-weight: $regular;
+            font-size: $medium;
+            margin: 0 auto;
+            opacity: $point7;
+            width: 37%;
+
+            @include md {
+                width: 70%;
+            }
+
+            @include sm {
+                width: 100%;
+            }
+        }
+    }
+
+    // blog page grid
+    .property-featured-grid {
+        display: grid;
+        grid-gap: 15px;
+        max-width: $maxWidth;
+        margin: 0 auto;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        align-items: flex-end;
+
+        grid-template-areas:
+            "security_info . park_info"
+            "air_conditioner_info image rental_info"
+            "garden_info image pool_info";
+
+        @include lg {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: auto;
+            grid-template-areas: none;
+        }
+
+        @include md {
+            grid-template-columns: 1fr;
+        }
+
+        @include sm {
+            grid-gap: 10px;
+        }
+
+        [class $="-info"] {
+            background-color: $white;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+
+            .feature-icon {
+                width: 46px;
+                height: 46px;
+                display: flex;
+                padding: 5px;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(254, 117, 63, 0.1);
+                border-radius: 5px;
+            }
+
+            .feature-title {
+                font-size: $large;
+                font-weight: $bolder;
+
+                @include sm {
+                    font-size: $eighteen;
+                }
+            }
+
+            .feature-text {
+                font-size: $medium;
+                font-weight: $regular;
+                opacity: $point7;
+
+                @include sm {
+                    font-size: $small;
+                }
+            }
+        }
+
+        .security-info {
+            grid-area: security_info;
+        }
+
+        .air-conditioner-info {
+            grid-area: air_conditioner_info;
+        }
+
+        .garden-info {
+            grid-area: garden_info;
+        }
+
+        .featured-image {
+            grid-area: image;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .park-info {
+            grid-area: park_info;
+        }
+
+        .rental-info {
+            grid-area: rental_info;
+        }
+
+        .pool-info {
+            grid-area: pool_info;
+        }
+
+        @include lg {
+
+            .security-info,
+            .air-conditioner-info,
+            .garden-info,
+            .park-info,
+            .rental-info,
+            .pool-info {
+                grid-area: auto;
+            }
+
+            .featured-image {
+                width: 100%;
+                height: 600px;
+                object-fit: cover;
+                grid-area: auto;
+                grid-column: 1 / -1;
+            }
+        }
+
+        @include md {
+            .featured-image {
+                height: 350px;
+            }
+
+            .security-info,
+            .air-conditioner-info,
+            .garden-info,
+            .park-info,
+            .rental-info,
+            .pool-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

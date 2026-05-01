@@ -1,0 +1,236 @@
+#about-us-page {
+    max-width: $maxWidth;
+    margin: 150px auto;
+
+    @include lg {
+        margin: 100px auto;
+    }
+
+    @include sm {
+        margin: 70px auto;
+    }
+
+    // article styles
+    article {
+        text-align: center;
+
+        .review-title {
+            color: $orange;
+            text-transform: uppercase;
+            letter-spacing: 8%;
+            font-weight: $bolder;
+            font-size: $medium;
+            display: block
+        }
+
+        .about-us-header {
+            @include section-header($extra-large, $bolder, 24%, 94.6%);
+        }
+
+        // customer review styles
+        .customer-review-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            @include lg {
+                flex-direction: column;
+            }
+
+            .customer-review {
+                flex: 1 1 0;
+                border: 2px solid $light-orange;
+                border-radius: 10px;
+                margin: 5px 15px;
+                padding: 5px 30px;
+
+                @include lg {
+                    margin: 10px 0;
+                }
+
+                @include md {
+                    padding: 5px 20px;
+                }
+
+                .review-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    @include sm {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+
+                    .reviewer-info-div {
+                        display: flex;
+                        align-items: center;
+
+                        .avatar-pic {
+                            width: 74px;
+                            height: 74px;
+                            border-radius: 50%;
+                            object-position: top;
+                            object-fit: cover;
+
+                            @include sm {
+                                width: 56px;
+                                height: 56px;
+                            }
+                        }
+
+                        .reviewer-info {
+                            text-align: left;
+                            margin: auto 25px;
+
+                            @include md {
+                                margin: auto 15px;
+                            }
+
+                            .reviewer-name {
+                                font-size: $large;
+                                font-weight: $bolder;
+
+                                @include sm {
+                                    font-size: $eighteen;
+                                }
+                            }
+
+                            .reviewer-position {
+                                opacity: $point7;
+                                font-size: $small;
+                                font-weight: $regular;
+                            }
+                        }
+                    }
+
+                    @include sm {
+                        .quote-icon {
+                            display: none;
+                        }
+                    }
+                }
+
+                .review-text {
+                    text-align: left;
+                    font-size: $medium;
+                    font-weight: $regular;
+                    opacity: $point7;
+                }
+            }
+        }
+
+        // carousel icon
+        .carousel-icon {
+            display: inline-block;
+            margin: 20px 0;
+
+            .dot {
+                font-size: 26px;
+                color: #EDEDED;
+
+                &.active {
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    // subscribe section
+    .subscribe-container {
+        text-align: center;
+        background-color: #433E89;
+        border-radius: 10px;
+        color: $white;
+        margin: 8% auto;
+        padding: 4% 5%;
+        align-items: center;
+        justify-content: center;
+
+        .subscribe-header {
+            font-size: $extra-large;
+            font-weight: $bold;
+
+            @include lg {
+                font-size: 32px;
+            }
+
+            @include sm {
+                font-size: $large;
+            }
+        }
+
+        .subscribe-text {
+            font-size: $small;
+            font-weight: $regular;
+            opacity: $point7;
+            padding: 0 25%;
+
+            @include md {
+                padding: 0 10%;
+            }
+
+            @include sm {
+                padding: 0;
+            }
+        }
+
+        .input-wrapper {
+            margin-top: 8%;
+            position: relative;
+            width: 70%;
+            height: 70px;
+            display: inline-block;
+
+            @include md {
+                width: 90%;
+            }
+
+            .email-input {
+                border-radius: 10px;
+                width: 90%;
+                height: 54%;
+                padding: 15px 30px;
+                font-weight: $regular;
+                font-size: $medium;
+            }
+
+            .subscribe-button {
+                @include btn(10px 35px);
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 80%;
+                margin: 8px 2%;
+            }
+        }
+
+        @include md {
+            .input-wrapper {
+                align-self: center;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                .email-input {
+                    width: 85%;
+                    height: auto;
+                    padding: 12px auto;
+                }
+
+                .subscribe-button {
+                    position: static;
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    padding: 12px auto;
+                }
+            }
+        }
+    }
+}

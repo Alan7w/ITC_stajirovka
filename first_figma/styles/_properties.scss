@@ -1,0 +1,155 @@
+#properties-page {
+    margin: 100px auto;
+    max-width: $maxWidth;
+
+    // header
+    .properties-header-div {
+        display: flex;
+        justify-content: space-between;
+
+        @include md {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &>* {
+            margin: auto 0;
+            padding: 50px 0;
+
+            @include md {
+                padding: 20px 0;
+            }
+        }
+
+        .properties-header {
+            @include section-header($extra-large, $bolder, 40%, 93.8%);
+        }
+
+        .view-all-btn {
+            color: $orange;
+            font-weight: $bolder;
+            font-size: $medium;
+            text-decoration: none;
+
+            @include sm {
+                font-size: $small;
+            }
+        }
+    }
+
+    // properties featured grid
+    .properties-grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(550px, auto);
+        grid-gap: 20px;
+        margin: 0 auto;
+
+        @include lg {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(400px, auto);
+        }
+
+        @include md {
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+        }
+
+        &>* {
+            background-color: $white;
+            border-radius: 10px;
+        }
+
+        .cell {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+            .prop-image {
+                border-radius: 10px 10px 0 0;
+                width: 100%;
+                height: 320px;
+                object-fit: cover;
+                object-position: bottom;
+
+                @include md {
+                    height: 270px;
+                }
+
+                @include sm {
+                    height: 220px;
+                }
+            }
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                margin: 5px 25px;
+
+                @include sm {
+                    margin: 5px 15px;
+                }
+
+                .property-title {
+                    font-size: $large;
+                    font-weight: $bolder;
+
+                    @include sm {
+                        font-size: $medium;
+                    }
+                }
+
+                .favourite-icon {
+                    background-color: $white;
+                    border: none;
+                    cursor: pointer;
+                    font-size: $large;
+                }
+
+                .property-price {
+                    color: $orange;
+                    font-weight: $bolder;
+                    font-size: $large;
+
+                    @include sm {
+                        font-size: $medium;
+                    }
+                }
+
+                .view-details-button {
+                    @include btn(10px 20px);
+                    margin: auto 0;
+                }
+            }
+
+            .property-specs {
+                opacity: $point9;
+                font-weight: $regular;
+                font-size: $small;
+                margin: 10px 25px;
+
+                @include sm {
+                    margin: 10px 15px;
+                }
+            }
+
+            .property-location {
+                font-weight: $regular;
+                font-size: $medium;
+                opacity: $point7;
+                margin: 10px 25px;
+
+                @include sm {
+                    margin: 10px 15px;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-10px);
+
+                @include md {
+                    transform: none;
+                }
+            }
+        }
+    }
+}

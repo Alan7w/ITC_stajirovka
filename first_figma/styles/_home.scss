@@ -1,0 +1,316 @@
+// home page content
+#home-page {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    text-align: center;
+
+    // navbar styles
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+
+        .burger-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 10;
+
+            span {
+                display: block;
+                width: 26px;
+                height: 3px;
+                background-color: $blackish;
+                border-radius: 2px;
+                transition: transform 0.3s, opacity 0.3s;
+            }
+
+            @include md {
+                display: flex;
+            }
+        }
+
+        :is(.logo-nav, .pages-nav) {
+            display: flex;
+            flex: 1 1 0;
+            list-style-type: none;
+            padding-left: 0;
+
+            .navlink {
+                margin: auto 0;
+            }
+        }
+
+        .logo-nav {
+            .logo-img {
+                @include xs {
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+
+        .pages-nav {
+            justify-content: space-between;
+
+            @include md {
+                display: none;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: $white;
+                padding: 20px;
+                box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+                z-index: 9;
+            }
+
+            @include sm {
+                gap: 10px;
+            }
+
+            &.open {
+                display: flex;
+            }
+
+            a:not([class $="-button"]) {
+                text-decoration: none;
+                font-weight: $bold;
+                font-size: $medium;
+                opacity: $point7;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+
+            .contact-button {
+                @include btn;
+                text-decoration: none;
+
+                @include md {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px auto;
+
+        @include lg {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        // text section
+        .text-section {
+            width: 45%;
+            text-align: left;
+
+            @include lg {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-header {
+                font-weight: $bolder;
+                font-size: $xxl;
+                line-height: 120%;
+
+                @include lg {
+                    font-size: $extra-large;
+                }
+
+                @include md {
+                    font-size: 36px;
+                }
+
+                @include sm {
+                    font-size: 28px;
+                }
+            }
+
+            .hero-text {
+                font-weight: $bold;
+                font-size: $eighteen;
+                line-height: 27px;
+                opacity: $point7;
+
+                @include sm {
+                    font-size: 14px;
+                }
+            }
+
+            // buy menu section
+            .search-menu-div {
+                background-color: $white;
+                width: 50%;
+                border-radius: 10px;
+
+                @include lg {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+
+                @include md {
+                    width: 100%;
+                }
+
+                .buy-menu {
+                    width: 100%;
+                    list-style-type: none;
+                    display: flex;
+                    border-radius: 5px 5px 0 0;
+                    justify-content: space-around;
+                    margin: 0;
+                    padding: 15px 10px;
+
+                    @include md {
+                        margin: 0;
+                    }
+
+                    li {
+                        flex: 1 1 auto;
+                    }
+
+                    .buylink {
+                        font-size: $eighteen;
+                        text-decoration: none;
+                        opacity: $point7;
+                        font-weight: $bold;
+
+                        &:hover {
+                            color: $orange;
+                        }
+                    }
+                }
+
+                .search-bar {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    background-color: $white;
+                    border-radius: 10px;
+                    width: 330%;
+                    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+                    @include lg {
+                        width: 100%;
+                        box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+                    }
+
+                    @include md {
+                        flex-direction: column;
+                        box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+                    }
+
+                    div {
+                        flex: 1 1 0;
+                        margin: auto 0;
+                        padding: 12px 20px;
+                        position: relative;
+
+                        select {
+                            font-weight: $regular;
+                            font-size: $medium;
+                            border: none;
+                            margin: 10px 0;
+                            opacity: $point7;
+                            cursor: pointer;
+                        }
+
+                        h3 {
+                            font-size: $large;
+                            font-weight: $bold;
+                            margin: 15px 0;
+                        }
+
+                        .search-button {
+                            @include btn(18px 30px);
+
+                            @include md {
+                                width: 100%;
+                            }
+                        }
+
+                        &:not(.search-button-div):not(.price-div)::after {
+                            content: '';
+                            position: absolute;
+                            right: 25%;
+                            top: 30%;
+                            height: 40%;
+                            width: 2px;
+                            background-color: rgba(0, 0, 0, 0.15);
+
+                            @include lg {
+                                right: 5%;
+                            }
+
+                            @include md {
+                                & {
+                                    content: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // image section
+        .hero-image {
+            border-radius: 10px;
+            width: 484px;
+            height: 615px;
+
+            @include lg {
+                width: 80%;
+                height: 50%;
+            }
+
+            @include md {
+                width: 100%;
+            }
+        }
+    }
+
+    .partners-header {
+        @include section-header($extra-large, $bolder, 24%, 88%);
+    }
+
+    .partners {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px auto;
+
+        @include lg {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        @include sm {
+            .company-logo {
+                max-width: 80px;
+                gap: 20px;
+            }
+        }
+    }
+}
