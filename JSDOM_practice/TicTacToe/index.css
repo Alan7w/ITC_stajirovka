@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all ease 0.1s;
+  transition: all ease 0.2s;
   font-family: "Nunito", sans-serif;
 }
 
@@ -15,19 +15,25 @@ body {
 
 .wrapper {
   display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 30px 20px;
+}
+.wrapper .boardDiv {
+  display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 500px;
   margin: 30px 0;
+  gap: 20px;
 }
-.wrapper .titleDiv {
+.wrapper .boardDiv .titleDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #353550;
   border-radius: 25px;
 }
-.wrapper .titleDiv .title {
+.wrapper .boardDiv .titleDiv .title {
   text-align: center;
   padding: 10px 0;
   letter-spacing: 15%;
@@ -40,13 +46,13 @@ body {
   background-size: 200%;
   animation: animate-title-gradient 2.5s linear infinite;
 }
-.wrapper .gameGrid {
+.wrapper .boardDiv .gameGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(40px, 140px);
   gap: 20px;
 }
-.wrapper .gameGrid .cell {
+.wrapper .boardDiv .gameGrid .cell {
   background-color: #353550;
   border-radius: 30px;
   display: flex;
@@ -56,20 +62,96 @@ body {
   color: white;
   font-size: 65px;
 }
-.wrapper .gameGrid .cell.win {
+.wrapper .boardDiv .gameGrid .cell.win {
   background-color: #e8896a;
 }
-.wrapper .controlDiv {
+.wrapper .boardDiv .controlDiv {
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
-.wrapper .controlDiv .resetBtn {
+.wrapper .boardDiv .controlDiv .resetBtn {
   border: none;
   padding: 8px 35px;
   border-radius: 20px;
   font-size: 20px;
   letter-spacing: 2%;
+  background: linear-gradient(to right, #e8896a, #d4607a);
+  cursor: pointer;
+}
+.wrapper .sidePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+.wrapper .sidePanel .statusBar,
+.wrapper .sidePanel .turnSelector {
+  background-color: #353550;
+  color: white;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.wrapper .sidePanel .statusBar {
+  font-size: 20px;
+  text-align: center;
+}
+.wrapper .sidePanel .turnSelector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wrapper .sidePanel .turnSelector p {
+  font-size: 18px;
+}
+.wrapper .sidePanel .turnSelector .turnBtn {
+  border: none;
+  padding: 6px 16px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #1a1a2e;
+  color: white;
+  cursor: pointer;
+}
+.wrapper .sidePanel .turnSelector .turnBtn.active {
+  background: linear-gradient(to right, #e8896a, #d4607a);
+  color: #111;
+}
+.wrapper .sidePanel .stepsTable {
+  color: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  padding: 2px 5px;
+  text-align: center;
+}
+.wrapper .sidePanel .stepsTable thead {
+  border-bottom: 1px solid white;
+}
+.wrapper .sidePanel .stepsTable th {
+  border-right: 1px solid white;
+}
+.wrapper .sidePanel .stepsTable tr {
+  border-bottom: 1px solid white;
+}
+.wrapper .sidePanel .stepsTable tr:last-child {
+  border-bottom: none;
+}
+.wrapper .sidePanel .stepsTable th,
+.wrapper .sidePanel .stepsTable td {
+  background-color: #353550;
+  padding: 10px 20px;
+  border-right: 1px solid white;
+}
+.wrapper .sidePanel .stepsTable th:last-child,
+.wrapper .sidePanel .stepsTable td:last-child {
+  border-right: none;
+}
+.wrapper .sidePanel .stepsTable th button,
+.wrapper .sidePanel .stepsTable td button {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 50%;
+  font-size: 20px;
   background: linear-gradient(to right, #e8896a, #d4607a);
   cursor: pointer;
 }
