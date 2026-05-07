@@ -9,8 +9,11 @@
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  background-color: #1a1a2e;
+  background-image: url(img/tic-tac-toe-isolated-background-free-vector.jpg);
+  background-position: center;
+  backdrop-filter: blur(10px);
 }
 
 .wrapper {
