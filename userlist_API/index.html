@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body onload="main()">
+    <div class="load-screen">
+        <Loading class="loading-text">Loading...</Loading>
+    </div>
+
+    <div class="user-info-screen">
+        <div class="user-info-div">
+            <span class="close-btn">&times;</span>
+        </div>
+    </div>
+
+    <div class="edit-user-info-screen">
+        <form class="edit-user-info-form">
+            <span class="close-btn">&times;</span>
+
+            <input type="number" placeholder="id" class="edit-id-input">
+            <input type="text" placeholder="name" class="edit-name-input">
+            <input type="text" placeholder="username" class="edit-username-input">
+            <input type="email" placeholder="email" class="edit-email-input">
+            <input type="text" placeholder="address (only city)" class="edit-address-input">
+            <input type="text" placeholder="phone-number" class="edit-phone-number-input">
+            <input type="text" placeholder="website" class="edit-website-input">
+            <input type="text" placeholder="company" class="edit-company-input">
+
+            <button type="submit" class="edit-user-btn">Submit</button>
+        </form>
+    </div>
+
+    <div class="wrapper">
+        <form class="add-user-form">
+            <input type="number" placeholder="id" class="id-input" required>
+            <input type="text" placeholder="name" class="name-input" required>
+            <input type="text" placeholder="username" class="username-input" required>
+            <input type="email" placeholder="email" class="email-input" required>
+            <input type="text" placeholder="address (only city)" class="address-input" required>
+            <input type="text" placeholder="phone-number" class="phone-number-input" required>
+            <input type="text" placeholder="website" class="website-input" required>
+            <input type="text" placeholder="company (only name)" class="company-input" required>
+            <button type="submit" class="addUserBtn">Add user</button>
+        </form>
+        
+    </div>
+</body>
+
+</html>

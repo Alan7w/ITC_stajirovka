@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all ease 0.2s;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e4e4e0;
+  position: relative;
+}
+
+.close-btn {
+  align-self: flex-end;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.load-screen,
+.user-info-screen,
+.edit-user-info-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.8);
+  color: white;
+}
+.load-screen .loading-text,
+.user-info-screen .loading-text,
+.edit-user-info-screen .loading-text {
+  letter-spacing: 15%;
+  font-size: 50px;
+  font-weight: 400;
+}
+.load-screen .user-info-div,
+.user-info-screen .user-info-div,
+.edit-user-info-screen .user-info-div {
+  padding: 20px;
+  background-color: white;
+  width: 700px;
+  height: 400px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: black;
+}
+.load-screen .user-info-div p,
+.user-info-screen .user-info-div p,
+.edit-user-info-screen .user-info-div p {
+  width: 100%;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #e2e6ee;
+  border-radius: 12px;
+  background-color: #f8f9fc;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  overflow: auto;
+}
+.load-screen .edit-user-info-form,
+.user-info-screen .edit-user-info-form,
+.edit-user-info-screen .edit-user-info-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.load-screen .edit-user-info-form input,
+.user-info-screen .edit-user-info-form input,
+.edit-user-info-screen .edit-user-info-form input {
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+.load-screen .edit-user-info-form input:focus,
+.user-info-screen .edit-user-info-form input:focus,
+.edit-user-info-screen .edit-user-info-form input:focus {
+  outline: none;
+}
+.load-screen .edit-user-info-form .edit-user-btn,
+.user-info-screen .edit-user-info-form .edit-user-btn,
+.edit-user-info-screen .edit-user-info-form .edit-user-btn {
+  border: none;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.wrapper form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 4px;
+}
+.wrapper form input {
+  padding: 4px 5px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+.wrapper form input:focus {
+  outline: none;
+}
+.wrapper form .addUserBtn {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+.wrapper .usersTable {
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+}
+.wrapper .usersTable th {
+  text-transform: capitalize;
+}
+.wrapper .usersTable th,
+.wrapper .usersTable td {
+  padding: 12px 16px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.wrapper .usersTable th:last-child,
+.wrapper .usersTable td:last-child {
+  border-right: none;
+}
+.wrapper .usersTable tr:last-child td {
+  border-bottom: none;
+}
+.wrapper .usersTable [class*=btn] {
+  cursor: pointer;
+  margin: 0 5px;
+}/*# sourceMappingURL=index.css.map */
