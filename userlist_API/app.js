@@ -1,3 +1,5 @@
+const http = axios.create({})
+
 let usersData
 let paginationState = {
     perPage: 5,
@@ -88,7 +90,7 @@ function activePagination() {
 }
 
 function loadUsers() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
+    http.get(`https://jsonplaceholder.typicode.com/users`)
         .then(res => {
             usersData = res.data
             paginationState.perPage = 5
@@ -144,7 +146,7 @@ function syncPaginationUI() {
 }
 
 // request interceptor
-axios.interceptors.request.use(config => {
+http.interceptors.request.use(config => {
     activeRequests++
     showLoader()
     return config
@@ -157,7 +159,7 @@ axios.interceptors.request.use(config => {
 })
 
 // response interceptor
-axios.interceptors.response.use(response => {
+http.interceptors.response.use(response => {
     activeRequests = Math.max(activeRequests - 1, 0)
     if (activeRequests == 0) {
         hideLoader()
@@ -198,7 +200,7 @@ function handleAction(event) {
 }
 
 function showUserDetails(userId) {
-    axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    http.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then(res => {
             // console.log(res.data)
             userInfoScreen.style.display = 'flex'
@@ -216,7 +218,7 @@ function showUserDetails(userId) {
 }
 
 function deleteUser(userId, row, users) {
-    axios.delete(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    http.delete(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then(() => {
             users = users.filter(user => user.id != userId)
             usersData = users
@@ -341,7 +343,7 @@ editUserInfoForm.addEventListener('submit', event => {
         }
     }
 
-    axios.put(`https://jsonplaceholder.typicode.com/users/${editingUser.id}`, editedUser)
+    http.put(`https://jsonplaceholder.typicode.com/users/${editingUser.id}`, editedUser)
         .then(() => {
             let updatedValues = [
                 editedUser.id,
@@ -395,7 +397,7 @@ function addUser(tbody, user) {
 }
 
 function addNewUser(newUser) {
-    axios.post(`https://jsonplaceholder.typicode.com/users/`, newUser)
+    http.post(`https://jsonplaceholder.typicode.com/users/`, newUser)
         .then(() => {
             // console.log('user added')
             usersData.push(newUser)
