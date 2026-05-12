@@ -1,4 +1,14 @@
-let userList;
+let usersData
+let paginationState = {
+    perPage: 5,
+    currentPage: 1,
+    totalPages: 2
+}
+let backBtn = document.querySelector('.back-btn')
+let forwardBtn = document.querySelector('.forward-btn')
+let pageInput = document.querySelector('.pagination-div input');
+let amountPerPageSelector = document.querySelector('.amount-per-page-selector');
+
 let isLoading = false
 let loader = document.querySelector('.load-screen')
 let userInfoScreen = document.querySelector('.user-info-screen')
@@ -34,15 +44,103 @@ closeBtns.forEach(btn => {
 
 function main() {
     loadUsers()
+    activePagination()
+}
+
+function activePagination() {
+    backBtn.addEventListener('click', () => {
+        if (paginationState.currentPage == 1) {
+            return
+        }
+        showPage(paginationState.currentPage - 1)
+        syncPaginationUI()
+    })
+
+    forwardBtn.addEventListener('click', () => {
+        if (paginationState.currentPage == paginationState.totalPages) {
+            return
+        }
+        showPage(paginationState.currentPage + 1)
+        syncPaginationUI()
+    })
+
+    pageInput.addEventListener('change', () => {
+        let target = parseInt(pageInput.value, 10)
+        if (target < 1) {
+            target = 1
+        }
+        if (target > paginationState.totalPages) {
+            target = paginationState.totalPages
+        }
+        showPage(target)
+        pageInput.value = `${target}`
+    })
+
+    amountPerPageSelector.addEventListener('change', () => {
+        const selectedAmount = parseInt(amountPerPageSelector.value, 10)
+        console.log(selectedAmount)
+        paginationState.perPage = selectedAmount
+        paginationState.currentPage = 1
+        renderAllTables()
+        showPage(1)
+        syncPaginationUI
+    })
 }
 
 function loadUsers() {
-    axios.get(`https://jsonplaceholder.typicode.com/users?limit=${5}`)
+    axios.get(`https://jsonplaceholder.typicode.com/users`)
         .then(res => {
-            userList = res.data
-            createUsersTable(userList)
+            usersData = res.data
+            paginationState.perPage = 5
+            paginationState.currentPage = 1
+            paginationState.totalPages = Math.ceil(usersData.length / paginationState.perPage)
+
+            renderAllTables()
+            showPage(1)
+            syncPaginationUI()
         })
         .catch(error => console.log(error))
+}
+
+function getDataSlices(users, perPage) {
+    let slices = []
+    for (let i = 0; i < users.length; i += perPage) {
+        slices.push(users.slice(i, i + perPage))
+    }
+    return slices
+}
+
+function renderAllTables() {
+    const wrapper = document.querySelector('.wrapper')
+    document.querySelectorAll('.usersTable').forEach(table => table.remove())
+    const dataSlices = getDataSlices(usersData, paginationState.perPage)
+    dataSlices.forEach((slice, index) => {
+        const pageNumber = index + 1
+        const table = createUsersTable(slice, pageNumber)
+        wrapper.appendChild(table)
+    })
+    paginationState.totalPages = dataSlices.length
+}
+
+function showPage(pageNumber) {
+    if (pageNumber < 1 || pageNumber > paginationState.totalPages) {
+        return
+    }
+    document.querySelectorAll('.usersTable').forEach(table => {
+        table.style.display = 'none'
+    });
+    const activeTable = document.querySelector('.page-' + pageNumber)
+    if (activeTable) {
+        activeTable.style.display = 'table'
+        paginationState.currentPage = pageNumber
+    }
+}
+
+function syncPaginationUI() {
+    pageInput.min = 1
+    pageInput.max = paginationState.totalPages
+    pageInput.value = paginationState.currentPage
+    amountPerPageSelector.value = String(paginationState.perPage)
 }
 
 // request interceptor
@@ -91,11 +189,11 @@ function handleAction(event) {
     }
     if (event.target.className == "delete-btn") {
         var row = event.target.parentElement.parentElement
-        deleteUser(thisUserID, row, userList)
+        deleteUser(thisUserID, row, usersData)
     }
     if (event.target.className == "edit-btn") {
         var row = event.target.parentElement.parentElement
-        editUser(thisUserID, row, userList)
+        editUser(thisUserID, row, usersData)
     }
 }
 
@@ -120,8 +218,11 @@ function showUserDetails(userId) {
 function deleteUser(userId, row, users) {
     axios.delete(`https://jsonplaceholder.typicode.com/users/${userId}`)
         .then(() => {
-            users.splice(parseInt(userId) - 1, 1)
-            row.parentElement.removeChild(row)
+            users = users.filter(user => user.id != userId)
+            usersData = users
+            renderAllTables()
+            const currentPage = Math.min(paginationState.currentPage, paginationState.totalPages)
+            showPage(currentPage)
         })
         .catch(error => console.log("This user doesnt exist", error))
 
@@ -137,12 +238,13 @@ function editUser(userId, row, users) {
     })
 }
 
-function createUsersTable(users) {
+function createUsersTable(users, pageNumber) {
     // console.log(users)
     const wrapper = document.querySelector('.wrapper')
     let usersTable = document.createElement('table')
     usersTable.addEventListener('click', handleAction)
     usersTable.classList.add('usersTable')
+    usersTable.classList.add('page-' + pageNumber)
     var thead = usersTable.createTHead()
     var headRow = thead.insertRow()
     var headerKeys = Object.keys(users[0])
@@ -162,8 +264,7 @@ function createUsersTable(users) {
         // console.log(user)
         addUser(tbody, user);
     })
-
-    wrapper.appendChild(usersTable)
+    return usersTable
 }
 
 let addUserForm = document.querySelector('.add-user-form')
@@ -179,7 +280,7 @@ addUserForm.addEventListener('submit', event => {
     let website = event.srcElement.querySelector('.website-input').value
     let companyName = event.srcElement.querySelector('.company-input').value
 
-    const userAlreadyExists = userList.some(user => user.id === id)
+    const userAlreadyExists = usersData.some(user => user.id == id)
     if (userAlreadyExists) {
         alert(`User with id ${id} already exists`)
         return
@@ -296,9 +397,10 @@ function addUser(tbody, user) {
 function addNewUser(newUser) {
     axios.post(`https://jsonplaceholder.typicode.com/users/`, newUser)
         .then(() => {
-            console.log('user added')
-            userList.push(newUser)
-            addUser(document.querySelector('tbody'), newUser)
+            // console.log('user added')
+            usersData.push(newUser)
+            renderAllTables()
+            showPage(paginationState.totalPages)
         })
         .catch(error => console.log("This user doesnt exist", error))
 }

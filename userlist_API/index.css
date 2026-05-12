@@ -158,4 +158,31 @@ body {
 .wrapper .usersTable [class*=btn] {
   cursor: pointer;
   margin: 0 5px;
+}
+.wrapper .pagination-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  order: 3;
+}
+.wrapper .pagination-div span {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.wrapper .pagination-div span:hover {
+  transform: scale(1.1);
+}
+.wrapper .pagination-div input, .wrapper .pagination-div select {
+  border-radius: 5px;
+  padding: 7px 12px;
+  width: 70px;
+  text-align: center;
+  font-size: 20px;
+}
+.wrapper .pagination-div input:focus, .wrapper .pagination-div select:focus {
+  outline: none;
+}
+.wrapper .pagination-div select {
+  width: auto;
 }/*# sourceMappingURL=index.css.map */
