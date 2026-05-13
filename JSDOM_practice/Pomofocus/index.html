@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header-title">
+            Pomofocus
+        </header>
+
+        <div class="timer-card">
+            <div class="buttons-div">
+                <button class="pomodoro-btn active" onclick="handlePomodora()">Pomodoro</button>
+                <button class="short-break-btn" onclick="handleShortBreak()">Short Break</button>
+                <button class="long-break-btn" onclick="handleLongBreak()">Long Break</button>
+            </div>
+
+            <p class="timer">15:000</p>
+
+            <button class="start-btn" onclick="startCountdown()">START</button>
+            <button class="pause-btn" onclick="stopCountDown()">PAUSE</button>
+        </div>
+    </div>
+</body>
+
+</html>
