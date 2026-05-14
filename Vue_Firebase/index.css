@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all ease 0.2s;
+}
+
+body {
+  min-height: 100vh;
+  margin: 20px auto;
+  background-color: #eee;
+  max-width: 960px;
+}
+
+li {
+  list-style-type: none;
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+li.fav {
+  background-color: #ff9ed2;
+  color: white;
+}
+
+.box {
+  padding: 100px 0;
+  width: 400px;
+  text-align: center;
+  background-color: #ddd;
+  margin: 20px;
+  display: inline-block;
+}/*# sourceMappingURL=index.css.map */
