@@ -4,14 +4,18 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.28.6",
     "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-vue": "^10.9.1"
   }
 }
