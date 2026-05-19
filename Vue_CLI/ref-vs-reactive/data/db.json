@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "welcome to the new blog",
+            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae excepturi magni quibusdam quidem. Voluptates, fugit error delectus quibusdam illo impedit! Rerum rem obcaecati natus cupiditate voluptatibus neque quidem accusantium.",
+            "tags": [
+                "wendev",
+                "coding",
+                "news"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "top 5 CSS tips",
+            "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae excepturi magni quibusdam quidem. Voluptates, fugit error delectus quibusdam illo impedit! Rerum rem obcaecati natus cupiditate voluptatibus neque quidem accusantium.",
+            "tags": [
+                "css",
+                "webdev",
+                "coding"
+            ]
+        }
+    ]
+}
