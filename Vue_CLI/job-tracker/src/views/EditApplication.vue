@@ -27,8 +27,8 @@ onMounted(() => {
     .catch((err) => console.log(err));
 });
 
-function editApplication(formData) {
-  applicationStore.updateApplication(id, formData);
+async function editApplication(formData) {
+  await applicationStore.updateApplication(id, formData);
   router.replace(`/applications/${id}`);
 }
 </script>

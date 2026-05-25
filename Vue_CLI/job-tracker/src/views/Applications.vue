@@ -1,45 +1,46 @@
 <template>
   <div class="applications-container">
-    <h1>My Applications</h1>
+    <a-flex vertical align="center">
+      <h1>My Applications</h1>
+      <a-button
+        type="primary"
+        @click="router.push('/applications/add')"
+        class="add-application-btn"
+      >
+        + Add Application
+      </a-button>
+    </a-flex>
+
     <div class="filter-bar">
-      <button
-        @click="setFilter('All')"
-        :class="{ active: currentFilter == 'All' }"
+      <a-radio-group
+        v-model:value="currentFilter"
+        @change="(e) => setFilter(e.target.value)"
       >
-        All
-      </button>
-      <button
-        @click="setFilter('applied')"
-        :class="{ active: currentFilter == 'applied' }"
-      >
-        Applied
-      </button>
-      <button
-        @click="setFilter('interview')"
-        :class="{ active: currentFilter == 'interview' }"
-      >
-        Interview
-      </button>
-      <button
-        @click="setFilter('offer')"
-        :class="{ active: currentFilter == 'offer' }"
-      >
-        Offer
-      </button>
-      <button
-        @click="setFilter('rejected')"
-        :class="{ active: currentFilter == 'rejected' }"
-      >
-        Rejected
-      </button>
+        <a-radio-button value="All">All</a-radio-button>
+        <a-radio-button value="applied">Applied</a-radio-button>
+        <a-radio-button value="interview">Interview</a-radio-button>
+        <a-radio-button value="offer">Offer</a-radio-button>
+        <a-radio-button value="rejected">Rejected</a-radio-button>
+      </a-radio-group>
     </div>
 
-    <button
-      class="add-application-btn"
-      @click="router.push('/applications/add')"
+    <a-pagination
+      class="pagination"
+      :current="currentPage"
+      :page-size="cardsPerPage"
+      :total="locallyFilterApplications.length"
+      :show-total="(total) => `Total ${total} items`"
+      show-quick-jumper
+      show-size-changer
+      @change="handlePaginationChange"
+      @showSizeChange="handlePaginationChange"
     >
-      Add Application
-    </button>
+      <template #itemRender="{ type, originalElement }">
+        <a v-if="type == 'prev'">Previous</a>
+        <a v-else-if="type == 'next'">Next</a>
+        <component :is="originalElement" v-else></component>
+      </template>
+    </a-pagination>
 
     <div class="cards-container">
       <ApplicationCard
@@ -47,25 +48,6 @@
         :key="application.id"
         :application="application"
       />
-    </div>
-
-    <div class="pagination">
-      <button @click="setPage(currentPage - 1)" :disabled="currentPage == 1">
-        &leftarrow; Prev
-      </button>
-      <input
-        type="number"
-        v-model="route.query.page"
-        @input="(a) => setPage(parseInt(a.target.value))"
-        :min="1"
-        :max="totalPages"
-      />Max: {{ totalPages }}
-      <button
-        @click="setPage(currentPage + 1)"
-        :disabled="currentPage == totalPages"
-      >
-        Next &rightarrow;
-      </button>
     </div>
   </div>
 </template>
@@ -93,16 +75,16 @@ const locallyFilterApplications = computed(() => {
       );
 });
 
-const cardsPerPage = 10;
+const cardsPerPage = computed(() => parseInt(route.query.perPage) || 10);
 
 const currentPage = computed(() => parseInt(route.query.page) || 1);
 const totalPages = computed(() =>
-  Math.ceil(locallyFilterApplications.value.length / cardsPerPage)
+  Math.ceil(locallyFilterApplications.value.length / cardsPerPage.value)
 );
 
 const paginatedApplications = computed(() => {
-  const start = (currentPage.value - 1) * cardsPerPage;
-  const end = start + cardsPerPage;
+  const start = (currentPage.value - 1) * cardsPerPage.value;
+  const end = start + cardsPerPage.value;
   return locallyFilterApplications.value.slice(start, end);
 });
 
@@ -110,9 +92,14 @@ function setFilter(filter) {
   router.replace({ query: { filter, page: 1 } });
 }
 
-function setPage(page) {
-  console.log(page);
-  router.replace({ query: { ...route.query, page } });
+function handlePaginationChange(page, pageSize) {
+  router.replace({
+    query: {
+      ...route.query,
+      page,
+      perPage: pageSize,
+    },
+  });
 }
 </script>
 
@@ -122,32 +109,22 @@ function setPage(page) {
   text-align: center;
 
   .filter-bar {
-    button {
-      border: none;
-      border-radius: 25px;
-      margin: 2px 10px;
-      padding: 10px;
-      cursor: pointer;
-
-      &.active {
-        background-color: green;
-      }
-    }
+    margin: 20px;
   }
 
   .add-application-btn {
-    padding: 20px;
     margin: 10px;
-    border-radius: 10px;
-    background-color: #02171f;
-    cursor: pointer;
-    color: white;
+    width: auto;
   }
 
   .cards-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+  }
+
+  .pagination {
+    margin: 20px;
   }
 }
 </style>

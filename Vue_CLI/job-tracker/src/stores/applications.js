@@ -46,7 +46,16 @@ export const useApplicationStore = defineStore('counter', {
     },
 
     updateApplication(editedAppID, newData) {
-
+      return fetch(`http://localhost:3000/applications/${editedAppID}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newData)
+      })
+        .then(res => res.json())
+        .then(data => {
+          this.applications = this.applications.map(app => app.id == data.id ? data : app)
+        })
+        .catch(err => console.log(err))
     },
 
     deleteApplication(applicationID) {

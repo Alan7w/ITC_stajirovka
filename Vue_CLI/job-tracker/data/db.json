@@ -1,7 +1,7 @@
 {
   "applications": [
     {
-      "id": 1,
+      "id": "1",
       "company": "Google",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -11,7 +11,7 @@
       "url": "https://careers.google.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "company": "Meta",
       "role": "Vue.js Engineer",
       "location": "New York, NY",
@@ -21,17 +21,7 @@
       "url": "https://metacareers.com"
     },
     {
-      "id": 3,
-      "company": "Spotify",
-      "role": "UI Developer",
-      "location": "Remote",
-      "status": "rejected",
-      "appliedDate": "2025-04-05",
-      "notes": "Rejected after first round. Feedback: needed more backend experience.",
-      "url": "https://spotify.com/jobs"
-    },
-    {
-      "id": 4,
+      "id": "4",
       "company": "Airbnb",
       "role": "Frontend Engineer",
       "location": "San Francisco, CA",
@@ -41,7 +31,7 @@
       "url": "https://careers.airbnb.com"
     },
     {
-      "id": 5,
+      "id": "5",
       "company": "Netflix",
       "role": "JavaScript Developer",
       "location": "Los Angeles, CA",
@@ -51,7 +41,7 @@
       "url": "https://jobs.netflix.com"
     },
     {
-      "id": 6,
+      "id": "6",
       "company": "Notion",
       "role": "Product Engineer",
       "location": "Remote",
@@ -61,7 +51,7 @@
       "url": "https://notion.so/careers"
     },
     {
-      "id": 7,
+      "id": "7",
       "company": "Shopify",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -71,7 +61,7 @@
       "url": "https://shopify.com/careers"
     },
     {
-      "id": 8,
+      "id": "8",
       "company": "Vercel",
       "role": "Developer Experience Engineer",
       "location": "Remote",
@@ -81,7 +71,7 @@
       "url": "https://vercel.com/careers"
     },
     {
-      "id": 9,
+      "id": "9",
       "company": "Atlassian",
       "role": "Software Engineer, Frontend",
       "location": "Austin, TX",
@@ -91,7 +81,7 @@
       "url": "https://atlassian.com/company/careers"
     },
     {
-      "id": 10,
+      "id": "10",
       "company": "Linear",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -101,7 +91,7 @@
       "url": "https://linear.app/careers"
     },
     {
-      "id": 11,
+      "id": "11",
       "company": "Figma",
       "role": "Web Engineer",
       "location": "Remote",
@@ -111,7 +101,7 @@
       "url": "https://figma.com/careers"
     },
     {
-      "id": 12,
+      "id": "12",
       "company": "Stripe",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -121,7 +111,7 @@
       "url": "https://stripe.com/jobs"
     },
     {
-      "id": 13,
+      "id": "13",
       "company": "GitHub",
       "role": "UI Engineer",
       "location": "Remote",
@@ -131,7 +121,7 @@
       "url": "https://github.com/about/careers"
     },
     {
-      "id": 14,
+      "id": "14",
       "company": "Twitch",
       "role": "Frontend Developer",
       "location": "San Francisco, CA",
@@ -141,7 +131,7 @@
       "url": "https://twitch.tv/jobs"
     },
     {
-      "id": 15,
+      "id": "15",
       "company": "Dropbox",
       "role": "Software Engineer, Web",
       "location": "Remote",
@@ -151,7 +141,7 @@
       "url": "https://dropbox.com/jobs"
     },
     {
-      "id": 16,
+      "id": "16",
       "company": "Slack",
       "role": "Frontend Platform Engineer",
       "location": "New York, NY",
@@ -161,7 +151,7 @@
       "url": "https://slack.com/careers"
     },
     {
-      "id": 17,
+      "id": "17",
       "company": "Loom",
       "role": "Product Engineer",
       "location": "Remote",
@@ -171,7 +161,7 @@
       "url": "https://loom.com/careers"
     },
     {
-      "id": 18,
+      "id": "18",
       "company": "Webflow",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -181,7 +171,7 @@
       "url": "https://webflow.com/careers"
     },
     {
-      "id": 19,
+      "id": "19",
       "company": "Asana",
       "role": "JavaScript Engineer",
       "location": "San Francisco, CA",
@@ -191,7 +181,7 @@
       "url": "https://asana.com/jobs"
     },
     {
-      "id": 20,
+      "id": "20",
       "company": "Cloudflare",
       "role": "Developer Experience Engineer",
       "location": "Remote",
@@ -201,7 +191,7 @@
       "url": "https://cloudflare.com/careers"
     },
     {
-      "id": 21,
+      "id": "21",
       "company": "Supabase",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -211,7 +201,7 @@
       "url": "https://supabase.com/careers"
     },
     {
-      "id": 22,
+      "id": "22",
       "company": "Tailwind Labs",
       "role": "UI Engineer",
       "location": "Remote",
@@ -221,7 +211,7 @@
       "url": "https://tailwindcss.com/careers"
     },
     {
-      "id": 23,
+      "id": "23",
       "company": "Brave",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -231,7 +221,7 @@
       "url": "https://brave.com/careers"
     },
     {
-      "id": 24,
+      "id": "24",
       "company": "Remix",
       "role": "Developer Advocate",
       "location": "Remote",
@@ -241,7 +231,7 @@
       "url": "https://remix.run/jobs"
     },
     {
-      "id": 25,
+      "id": "25",
       "company": "Planetscale",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -251,7 +241,7 @@
       "url": "https://planetscale.com/careers"
     },
     {
-      "id": 26,
+      "id": "26",
       "company": "Retool",
       "role": "Software Engineer, UI",
       "location": "San Francisco, CA",
@@ -261,7 +251,7 @@
       "url": "https://retool.com/careers"
     },
     {
-      "id": 27,
+      "id": "27",
       "company": "Prisma",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -271,7 +261,7 @@
       "url": "https://prisma.io/careers"
     },
     {
-      "id": 28,
+      "id": "28",
       "company": "Sanity",
       "role": "UI Engineer",
       "location": "Remote",
@@ -281,7 +271,7 @@
       "url": "https://sanity.io/careers"
     },
     {
-      "id": 29,
+      "id": "29",
       "company": "Render",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -291,7 +281,7 @@
       "url": "https://render.com/careers"
     },
     {
-      "id": 30,
+      "id": "30",
       "company": "Railway",
       "role": "Product Engineer",
       "location": "Remote",
@@ -301,7 +291,7 @@
       "url": "https://railway.app/careers"
     },
     {
-      "id": 31,
+      "id": "31",
       "company": "Deno",
       "role": "Web Platform Engineer",
       "location": "Remote",
@@ -311,7 +301,7 @@
       "url": "https://deno.com/jobs"
     },
     {
-      "id": 32,
+      "id": "32",
       "company": "Fly.io",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -321,7 +311,7 @@
       "url": "https://fly.io/jobs"
     },
     {
-      "id": 33,
+      "id": "33",
       "company": "PostHog",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -331,17 +321,17 @@
       "url": "https://posthog.com/careers"
     },
     {
-      "id": 34,
       "company": "Resend",
       "role": "UI Engineer",
       "location": "Remote",
-      "status": "applied",
+      "status": "offer",
       "appliedDate": "2025-05-21",
       "notes": "Early-stage startup. Love their developer-first approach.",
-      "url": "https://resend.com/careers"
+      "url": "https://resend.com/careers",
+      "id": "34"
     },
     {
-      "id": 35,
+      "id": "35",
       "company": "Turso",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -351,7 +341,7 @@
       "url": "https://turso.tech/careers"
     },
     {
-      "id": 36,
+      "id": "36",
       "company": "Neon",
       "role": "Product Engineer",
       "location": "Remote",
@@ -361,7 +351,7 @@
       "url": "https://neon.tech/careers"
     },
     {
-      "id": 37,
+      "id": "37",
       "company": "Storybook",
       "role": "Frontend Infrastructure Engineer",
       "location": "Remote",
@@ -371,7 +361,7 @@
       "url": "https://storybook.js.org/careers"
     },
     {
-      "id": 38,
+      "id": "38",
       "company": "Nx",
       "role": "Developer Tools Engineer",
       "location": "Remote",
@@ -381,7 +371,7 @@
       "url": "https://nx.dev/careers"
     },
     {
-      "id": 39,
+      "id": "39",
       "company": "Hasura",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -391,7 +381,7 @@
       "url": "https://hasura.io/careers"
     },
     {
-      "id": 40,
+      "id": "40",
       "company": "Temporal",
       "role": "UI Engineer",
       "location": "Remote",
@@ -401,7 +391,7 @@
       "url": "https://temporal.io/careers"
     },
     {
-      "id": 41,
+      "id": "41",
       "company": "Cal.com",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -411,7 +401,7 @@
       "url": "https://cal.com/careers"
     },
     {
-      "id": 42,
+      "id": "42",
       "company": "Clerk",
       "role": "Developer Experience Engineer",
       "location": "Remote",
@@ -421,7 +411,7 @@
       "url": "https://clerk.com/careers"
     },
     {
-      "id": 43,
+      "id": "43",
       "company": "Inngest",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -431,7 +421,7 @@
       "url": "https://inngest.com/careers"
     },
     {
-      "id": 44,
+      "id": "44",
       "company": "Trigger.dev",
       "role": "Product Engineer",
       "location": "Remote",
@@ -441,7 +431,7 @@
       "url": "https://trigger.dev/careers"
     },
     {
-      "id": 45,
+      "id": "45",
       "company": "Mintlify",
       "role": "UI Engineer",
       "location": "Remote",
@@ -451,7 +441,7 @@
       "url": "https://mintlify.com/careers"
     },
     {
-      "id": 46,
+      "id": "46",
       "company": "Encore",
       "role": "Frontend Developer",
       "location": "Remote",
@@ -461,7 +451,7 @@
       "url": "https://encore.dev/careers"
     },
     {
-      "id": 47,
+      "id": "47",
       "company": "Zed",
       "role": "UI Engineer",
       "location": "Remote",
@@ -471,7 +461,7 @@
       "url": "https://zed.dev/careers"
     },
     {
-      "id": 48,
+      "id": "48",
       "company": "Raycast",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -481,7 +471,7 @@
       "url": "https://raycast.com/careers"
     },
     {
-      "id": 49,
+      "id": "49",
       "company": "Arc",
       "role": "Web Engineer",
       "location": "New York, NY",
@@ -491,7 +481,7 @@
       "url": "https://arc.net/careers"
     },
     {
-      "id": 50,
+      "id": "50",
       "company": "Liveblocks",
       "role": "Frontend Engineer",
       "location": "Remote",
@@ -499,6 +489,27 @@
       "appliedDate": "2025-05-22",
       "notes": "Real-time collaboration infra. Stack aligns perfectly with my experience.",
       "url": "https://liveblocks.io/careers"
+    },
+    {
+      "company": "asdfg",
+      "role": "qwerty",
+      "location": "qwerty",
+      "status": "rejected",
+      "appliedDate": "0023-12-31",
+      "notes": "qwerty",
+      "url": "qwerty",
+      "id": "ex8PHeMmudY"
+    },
+    {
+      "company": "Asadkhon Rasulov ",
+      "role": "zxcvb",
+      "location": "zxcvb",
+      "status": "rejected",
+      "appliedDate": "0023-12-31",
+      "notes": "zxcvb",
+      "url": "zxcvb",
+      "id": "QSVlsu2HeTM"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

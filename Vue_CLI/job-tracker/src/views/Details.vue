@@ -1,11 +1,16 @@
 <template>
-  <div class="application-details-card" v-if="application">
+  <a-card v-if="application">
     {{ application }}
-    <RouterLink :to="`/applications/${id}/edit`">Edit</RouterLink>
-    <button @click="handleDelete">Delete</button>
-    <!-- <RouterLink to="/applications">&leftarrow; Back</RouterLink> -->
-    <button @click="() => router.go(-1)">Back</button>
-  </div>
+    <a-space size="middle">
+      <a-button @click="router.push(`/applications/${application.id}/edit`)">
+        Edit
+      </a-button>
+      <a-button danger @click="handleDelete"> Delete </a-button>
+      <a-button type="primary" @click="router.push('/applications')">
+        Back
+      </a-button>
+    </a-space>
+  </a-card>
   <div v-else>Loading Application Details...</div>
 </template>
 

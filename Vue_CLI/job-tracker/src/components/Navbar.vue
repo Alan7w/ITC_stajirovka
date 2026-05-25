@@ -13,7 +13,6 @@ nav {
   text-align: center;
   padding: 20px;
   background-color: #eee;
-  // width: 100vw;
 
   a {
     border-radius: 5px;

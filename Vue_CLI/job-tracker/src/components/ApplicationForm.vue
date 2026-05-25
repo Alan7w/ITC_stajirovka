@@ -32,8 +32,8 @@
       <label for="url-input">URL: </label>
       <input type="text" v-model="url" required />
 
-      <button type="submit">Submit</button>
-      <button @click="router.push('/applications')">Cancel</button>
+      <a-button type="primary" htmlType="submit">Save changes</a-button>
+      <a-button @click="router.push('/applications')">Cancel</a-button>
     </form>
   </div>
 </template>
