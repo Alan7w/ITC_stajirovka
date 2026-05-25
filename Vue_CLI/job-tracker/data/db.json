@@ -1,0 +1,504 @@
+{
+  "applications": [
+    {
+      "id": 1,
+      "company": "Google",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-01",
+      "notes": "Referral from John",
+      "url": "https://careers.google.com"
+    },
+    {
+      "id": 2,
+      "company": "Meta",
+      "role": "Vue.js Engineer",
+      "location": "New York, NY",
+      "status": "interview",
+      "appliedDate": "2025-04-18",
+      "notes": "HR reached out via LinkedIn. Technical interview scheduled.",
+      "url": "https://metacareers.com"
+    },
+    {
+      "id": 3,
+      "company": "Spotify",
+      "role": "UI Developer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-04-05",
+      "notes": "Rejected after first round. Feedback: needed more backend experience.",
+      "url": "https://spotify.com/jobs"
+    },
+    {
+      "id": 4,
+      "company": "Airbnb",
+      "role": "Frontend Engineer",
+      "location": "San Francisco, CA",
+      "status": "offer",
+      "appliedDate": "2025-03-20",
+      "notes": "Offer received! Salary: $120k. Deadline to respond: May 30.",
+      "url": "https://careers.airbnb.com"
+    },
+    {
+      "id": 5,
+      "company": "Netflix",
+      "role": "JavaScript Developer",
+      "location": "Los Angeles, CA",
+      "status": "applied",
+      "appliedDate": "2025-05-10",
+      "notes": "Applied through their website. No response yet.",
+      "url": "https://jobs.netflix.com"
+    },
+    {
+      "id": 6,
+      "company": "Notion",
+      "role": "Product Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-04-28",
+      "notes": "Two rounds done. Final round with the CTO next week.",
+      "url": "https://notion.so/careers"
+    },
+    {
+      "id": 7,
+      "company": "Shopify",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-03-15",
+      "notes": "Ghosted after take-home assignment. Followed up twice.",
+      "url": "https://shopify.com/careers"
+    },
+    {
+      "id": 8,
+      "company": "Vercel",
+      "role": "Developer Experience Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-12",
+      "notes": "Dream job. Tailored CV specifically for this role.",
+      "url": "https://vercel.com/careers"
+    },
+    {
+      "id": 9,
+      "company": "Atlassian",
+      "role": "Software Engineer, Frontend",
+      "location": "Austin, TX",
+      "status": "interview",
+      "appliedDate": "2025-04-22",
+      "notes": "Passed coding screen. Waiting for system design round date.",
+      "url": "https://atlassian.com/company/careers"
+    },
+    {
+      "id": 10,
+      "company": "Linear",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-15",
+      "notes": "Small team, exciting product. Found via Twitter job post.",
+      "url": "https://linear.app/careers"
+    },
+    {
+      "id": 11,
+      "company": "Figma",
+      "role": "Web Engineer",
+      "location": "Remote",
+      "status": "offer",
+      "appliedDate": "2025-03-30",
+      "notes": "Second offer on the table. Comparing with Airbnb offer.",
+      "url": "https://figma.com/careers"
+    },
+    {
+      "id": 12,
+      "company": "Stripe",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-14",
+      "notes": "Applied via their careers page. Strong interest in fintech.",
+      "url": "https://stripe.com/jobs"
+    },
+    {
+      "id": 13,
+      "company": "GitHub",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-04-30",
+      "notes": "Recruiter reached out on LinkedIn. First round went well.",
+      "url": "https://github.com/about/careers"
+    },
+    {
+      "id": 14,
+      "company": "Twitch",
+      "role": "Frontend Developer",
+      "location": "San Francisco, CA",
+      "status": "rejected",
+      "appliedDate": "2025-04-10",
+      "notes": "Rejected after technical screen. Feedback: React depth needed improvement.",
+      "url": "https://twitch.tv/jobs"
+    },
+    {
+      "id": 15,
+      "company": "Dropbox",
+      "role": "Software Engineer, Web",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-16",
+      "notes": "Found via Hacker News Who's Hiring thread.",
+      "url": "https://dropbox.com/jobs"
+    },
+    {
+      "id": 16,
+      "company": "Slack",
+      "role": "Frontend Platform Engineer",
+      "location": "New York, NY",
+      "status": "interview",
+      "appliedDate": "2025-04-25",
+      "notes": "Three rounds completed. Awaiting decision from hiring manager.",
+      "url": "https://slack.com/careers"
+    },
+    {
+      "id": 17,
+      "company": "Loom",
+      "role": "Product Engineer",
+      "location": "Remote",
+      "status": "offer",
+      "appliedDate": "2025-04-02",
+      "notes": "Offer received. Salary: $115k + equity. Deadline: June 5.",
+      "url": "https://loom.com/careers"
+    },
+    {
+      "id": 18,
+      "company": "Webflow",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-18",
+      "notes": "Big fan of the product. Mentioned it in cover letter.",
+      "url": "https://webflow.com/careers"
+    },
+    {
+      "id": 19,
+      "company": "Asana",
+      "role": "JavaScript Engineer",
+      "location": "San Francisco, CA",
+      "status": "rejected",
+      "appliedDate": "2025-03-28",
+      "notes": "No feedback provided. Ghosted after take-home submission.",
+      "url": "https://asana.com/jobs"
+    },
+    {
+      "id": 20,
+      "company": "Cloudflare",
+      "role": "Developer Experience Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-02",
+      "notes": "Passed initial screen. Technical deep-dive scheduled for next week.",
+      "url": "https://cloudflare.com/careers"
+    },
+    {
+      "id": 21,
+      "company": "Supabase",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-19",
+      "notes": "Open source-first company. Excited about the stack.",
+      "url": "https://supabase.com/careers"
+    },
+    {
+      "id": 22,
+      "company": "Tailwind Labs",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-20",
+      "notes": "Tiny team, massive impact. Long-time user of Tailwind CSS.",
+      "url": "https://tailwindcss.com/careers"
+    },
+    {
+      "id": 23,
+      "company": "Brave",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-21",
+      "notes": "Privacy-focused browser company. Excited about the mission.",
+      "url": "https://brave.com/careers"
+    },
+    {
+      "id": 24,
+      "company": "Remix",
+      "role": "Developer Advocate",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-03",
+      "notes": "Big fan of the framework. First call with the team went great.",
+      "url": "https://remix.run/jobs"
+    },
+    {
+      "id": 25,
+      "company": "Planetscale",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-04-12",
+      "notes": "Rejected after take-home. No feedback given.",
+      "url": "https://planetscale.com/careers"
+    },
+    {
+      "id": 26,
+      "company": "Retool",
+      "role": "Software Engineer, UI",
+      "location": "San Francisco, CA",
+      "status": "offer",
+      "appliedDate": "2025-04-01",
+      "notes": "Offer received. Salary: $125k. Strong team impression.",
+      "url": "https://retool.com/careers"
+    },
+    {
+      "id": 27,
+      "company": "Prisma",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-20",
+      "notes": "Love their ORM. Applied after seeing tweet from their CTO.",
+      "url": "https://prisma.io/careers"
+    },
+    {
+      "id": 28,
+      "company": "Sanity",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-05",
+      "notes": "Headless CMS space. Passed async video interview.",
+      "url": "https://sanity.io/careers"
+    },
+    {
+      "id": 29,
+      "company": "Render",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-17",
+      "notes": "Used their platform for side projects. Would love to work here.",
+      "url": "https://render.com/careers"
+    },
+    {
+      "id": 30,
+      "company": "Railway",
+      "role": "Product Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-22",
+      "notes": "Found via their changelog blog post. Small but growing team.",
+      "url": "https://railway.app/careers"
+    },
+    {
+      "id": 31,
+      "company": "Deno",
+      "role": "Web Platform Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-04-29",
+      "notes": "Huge fan of the runtime. Coding challenge completed successfully.",
+      "url": "https://deno.com/jobs"
+    },
+    {
+      "id": 32,
+      "company": "Fly.io",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-04-08",
+      "notes": "Rejected at final stage. Feedback: culture fit concerns.",
+      "url": "https://fly.io/jobs"
+    },
+    {
+      "id": 33,
+      "company": "PostHog",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-06",
+      "notes": "All-remote team. Passed first technical round. Super async process.",
+      "url": "https://posthog.com/careers"
+    },
+    {
+      "id": 34,
+      "company": "Resend",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-21",
+      "notes": "Early-stage startup. Love their developer-first approach.",
+      "url": "https://resend.com/careers"
+    },
+    {
+      "id": 35,
+      "company": "Turso",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-19",
+      "notes": "Edge database startup. Found via a podcast mention.",
+      "url": "https://turso.tech/careers"
+    },
+    {
+      "id": 36,
+      "company": "Neon",
+      "role": "Product Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-07",
+      "notes": "Serverless Postgres company. Interview with eng lead scheduled.",
+      "url": "https://neon.tech/careers"
+    },
+    {
+      "id": 37,
+      "company": "Storybook",
+      "role": "Frontend Infrastructure Engineer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-03-25",
+      "notes": "Rejected after first round. Needed more open source contributions.",
+      "url": "https://storybook.js.org/careers"
+    },
+    {
+      "id": 38,
+      "company": "Nx",
+      "role": "Developer Tools Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-13",
+      "notes": "Big monorepo tooling fan. Tailored application with OSS contributions.",
+      "url": "https://nx.dev/careers"
+    },
+    {
+      "id": 39,
+      "company": "Hasura",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "offer",
+      "appliedDate": "2025-04-05",
+      "notes": "Offer: $118k + equity. Comparing with other offers on the table.",
+      "url": "https://hasura.io/careers"
+    },
+    {
+      "id": 40,
+      "company": "Temporal",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-04-27",
+      "notes": "Workflow orchestration space. System design round next.",
+      "url": "https://temporal.io/careers"
+    },
+    {
+      "id": 41,
+      "company": "Cal.com",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-15",
+      "notes": "Open source scheduling tool. Contributed a small PR before applying.",
+      "url": "https://cal.com/careers"
+    },
+    {
+      "id": 42,
+      "company": "Clerk",
+      "role": "Developer Experience Engineer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-01",
+      "notes": "Auth infrastructure company. Technical screen passed. Good vibes.",
+      "url": "https://clerk.com/careers"
+    },
+    {
+      "id": 43,
+      "company": "Inngest",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-18",
+      "notes": "Event-driven workflow platform. Found via their dev blog.",
+      "url": "https://inngest.com/careers"
+    },
+    {
+      "id": 44,
+      "company": "Trigger.dev",
+      "role": "Product Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-20",
+      "notes": "Background jobs for developers. Early-stage, exciting opportunity.",
+      "url": "https://trigger.dev/careers"
+    },
+    {
+      "id": 45,
+      "company": "Mintlify",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-04-15",
+      "notes": "Rejected after async interview. Role filled internally.",
+      "url": "https://mintlify.com/careers"
+    },
+    {
+      "id": 46,
+      "company": "Encore",
+      "role": "Frontend Developer",
+      "location": "Remote",
+      "status": "interview",
+      "appliedDate": "2025-05-04",
+      "notes": "Backend framework with a frontend dashboard. Round two scheduled.",
+      "url": "https://encore.dev/careers"
+    },
+    {
+      "id": 47,
+      "company": "Zed",
+      "role": "UI Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-16",
+      "notes": "Next-gen code editor. Dream to work on developer tooling at this level.",
+      "url": "https://zed.dev/careers"
+    },
+    {
+      "id": 48,
+      "company": "Raycast",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "offer",
+      "appliedDate": "2025-04-10",
+      "notes": "Offer: $122k. Daily user of Raycast. Would be a dream to join.",
+      "url": "https://raycast.com/careers"
+    },
+    {
+      "id": 49,
+      "company": "Arc",
+      "role": "Web Engineer",
+      "location": "New York, NY",
+      "status": "interview",
+      "appliedDate": "2025-04-26",
+      "notes": "Browser company with bold UI vision. Final round this Friday.",
+      "url": "https://arc.net/careers"
+    },
+    {
+      "id": 50,
+      "company": "Liveblocks",
+      "role": "Frontend Engineer",
+      "location": "Remote",
+      "status": "applied",
+      "appliedDate": "2025-05-22",
+      "notes": "Real-time collaboration infra. Stack aligns perfectly with my experience.",
+      "url": "https://liveblocks.io/careers"
+    }
+  ]
+}
