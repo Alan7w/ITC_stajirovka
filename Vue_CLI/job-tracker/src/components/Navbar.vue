@@ -1,7 +1,8 @@
 <template>
   <nav>
     <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/applications">Applications</RouterLink>
+    <RouterLink to="/applications">Applications</RouterLink> |
+    <RouterLink to="/applications/add">New Application</RouterLink>
   </nav>
 </template>
 

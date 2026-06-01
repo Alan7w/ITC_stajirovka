@@ -1,46 +1,108 @@
 <template>
   <div class="form-container">
-    <form @submit.prevent="handleSubmit">
-      <label for="company-name-ipnut">Company name: </label>
-      <input type="text" id="company-name-input" v-model="company" required />
+    <a-form
+      @finish="handleSubmit"
+      :model="formState"
+      :label-col="{ span: 6 }"
+      :wrapper-col="{ span: 20 }"
+    >
+      <a-form-item
+        label="Company"
+        name="company"
+        :rules="[
+          { required: true, message: 'Please fill in the company name!' },
+        ]"
+      >
+        <a-input
+          v-model:value="formState.company"
+          placeholder="e.g. Google"
+        ></a-input>
+      </a-form-item>
 
-      <label for="role-input">Role: </label>
-      <input type="text" id="role-input" v-model="role" required />
+      <a-form-item
+        label="Role"
+        name="role"
+        :rules="[{ required: true, message: 'Please fill in the role!' }]"
+      >
+        <a-input
+          v-model:value="formState.role"
+          placeholder="e.g. FrontEnd Developer"
+        ></a-input>
+      </a-form-item>
 
-      <label for="location-input">Location: </label>
-      <input type="text" id="location-input" v-model="location" required />
+      <a-form-item
+        label="Location"
+        name="location"
+        :rules="[{ required: true, message: 'Please fill in the location!' }]"
+      >
+        <a-input
+          v-model:value="formState.location"
+          placeholder="e.g. Las Vegas"
+        ></a-input>
+      </a-form-item>
 
-      <label for="status-input">Status: </label>
-      <select v-model="status" id="status-input" required>
-        <option value="applied">Applied</option>
-        <option value="interview">Interview</option>
-        <option value="offer">Offer</option>
-        <option value="rejected">Rejected</option>
-      </select>
+      <a-form-item
+        label="Status"
+        name="status"
+        :rules="[{ required: true, message: 'Please select a status' }]"
+      >
+        <a-select v-model:value="formState.status">
+          <a-select-option value="applied">Applied</a-select-option>
+          <a-select-option value="interview">Interview</a-select-option>
+          <a-select-option value="offer">Offer</a-select-option>
+          <a-select-option value="rejected">Rejected</a-select-option>
+        </a-select>
+      </a-form-item>
 
-      <label for="applied-date-input">Applied date: </label>
-      <input
-        type="date"
-        id="applied-date-input"
-        v-model="appliedDate"
-        required
-      />
+      <a-form-item
+        label="Applied date"
+        name="appliedDate"
+        :rules="[{ required: true, message: 'Please select a date!' }]"
+      >
+        <a-date-picker
+          v-model:value="formState.appliedDate"
+          value-format="YYYY-MM-DD"
+        />
+      </a-form-item>
 
-      <label for="notes-input">Notes: </label>
-      <textarea id="notes-input" v-model="notes" required></textarea>
+      <a-form-item label="Notes" name="notes">
+        <a-textarea
+          v-model:value="formState.notes"
+          placeholder="e.g. Bring paper version of the resume"
+        />
+      </a-form-item>
 
-      <label for="url-input">URL: </label>
-      <input type="text" v-model="url" required />
+      <a-form-item
+        label="URL"
+        name="url"
+        :rules="[
+          { required: true, message: 'Please fill in the URL!', type: 'url' },
+        ]"
+      >
+        <a-input
+          v-model:value="formState.url"
+          placeholder="e.g. www.google.com"
+        ></a-input>
+      </a-form-item>
 
-      <a-button type="primary" htmlType="submit">Save changes</a-button>
-      <a-button @click="router.push('/applications')">Cancel</a-button>
-    </form>
+      <a-form-item :wrapper-col="{ offset: 8 }">
+        <a-space size="large">
+          <a-form-item>
+            <a-button type="primary" html-type="submit">Submit</a-button>
+          </a-form-item>
+
+          <a-form-item>
+            <a-button @click="router.push('/applications')">Cancel</a-button>
+          </a-form-item>
+        </a-space>
+      </a-form-item>
+    </a-form>
   </div>
 </template>
 
 <script setup>
 import router from "@/router";
-import { ref } from "vue";
+import { reactive } from "vue";
 
 const props = defineProps({
   initialData: {
@@ -57,26 +119,20 @@ const props = defineProps({
   },
 });
 
+const formState = reactive({
+  company: props.initialData.company,
+  role: props.initialData.role,
+  location: props.initialData.location,
+  status: props.initialData.status,
+  appliedDate: props.initialData.appliedDate,
+  notes: props.initialData.notes,
+  url: props.initialData.url,
+});
+
 const emit = defineEmits(["submit"]);
 
-const company = ref(props.initialData.company);
-const role = ref(props.initialData.role);
-const location = ref(props.initialData.location);
-const status = ref(props.initialData.status);
-const appliedDate = ref(props.initialData.appliedDate);
-const notes = ref(props.initialData.notes);
-const url = ref(props.initialData.url);
-
 function handleSubmit() {
-  emit("submit", {
-    company: company.value,
-    role: role.value,
-    location: location.value,
-    status: status.value,
-    appliedDate: appliedDate.value,
-    notes: notes.value,
-    url: url.value,
-  });
+  emit("submit", { ...formState });
 }
 </script>
 
@@ -89,46 +145,46 @@ function handleSubmit() {
   form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    min-width: 450px;
+    // gap: 10px;
+    min-width: 500px;
     background-color: #eee;
     padding: 30px;
     border-radius: 20px;
 
-    input {
-      border-radius: 5px 5px 0 0;
-      padding: 8px 10px;
+    // input {
+    //   border-radius: 5px 5px 0 0;
+    //   padding: 8px 10px;
 
-      &:focus {
-        outline: none;
-      }
-    }
+    //   &:focus {
+    //     outline: none;
+    //   }
+    // }
 
-    input[type="text"] {
-      border: none;
-      border-bottom: 1px solid black;
-    }
+    // input[type="text"] {
+    //   border: none;
+    //   border-bottom: 1px solid black;
+    // }
 
-    select {
-      border: none;
-      border-radius: 7px;
-      padding: 10px;
-      cursor: pointer;
+    // select {
+    //   border: none;
+    //   border-radius: 7px;
+    //   padding: 10px;
+    //   cursor: pointer;
 
-      &:focus {
-        outline: none;
-      }
-    }
+    //   &:focus {
+    //     outline: none;
+    //   }
+    // }
 
-    textarea {
-      border-radius: 7px;
-      border: none;
-      padding: 10px;
+    // textarea {
+    //   border-radius: 7px;
+    //   border: none;
+    //   padding: 10px;
 
-      &:focus {
-        outline: none;
-      }
-    }
+    //   &:focus {
+    //     outline: none;
+    //   }
+    // }
   }
 }
 </style>

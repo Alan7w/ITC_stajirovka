@@ -1,5 +1,5 @@
 <template>
-  <div class="applications-container">
+  <!-- <div class="applications-container">
     <a-flex vertical align="center">
       <h1>My Applications</h1>
       <a-button
@@ -32,6 +32,18 @@
       :show-total="(total) => `Total ${total} items`"
       show-quick-jumper
       show-size-changer
+      :page-size-options="[
+        '5',
+        '10',
+        '15',
+        '20',
+        '25',
+        '30',
+        '35',
+        '40',
+        '45',
+        '50',
+      ]"
       @change="handlePaginationChange"
       @showSizeChange="handlePaginationChange"
     >
@@ -49,6 +61,66 @@
         :application="application"
       />
     </div>
+  </div> -->
+
+  <div class="applications-table-container">
+    <a-table
+      :dataSource="applicationStore.applications"
+      :columns="columns"
+      :scroll="{ x: 1500, y: 600 }"
+      :row-key="(record) => record.id"
+      :pagination="pagination"
+    >
+      <template #title>
+        <a-flex align="center" justify="space-around">
+          <h1>My Applications</h1>
+          <a-button
+            type="primary"
+            @click="router.push('/applications/add')"
+            class="add-application-btn"
+          >
+            + Add Application
+          </a-button>
+        </a-flex>
+      </template>
+
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key == 'status'">
+          <a-tag :color="getStatusColor(record.status)">{{
+            record.status
+          }}</a-tag>
+        </template>
+
+        <template v-if="column.key == 'actions'">
+          <a-space size="middle">
+            <a-button
+              @click="router.push(`/applications/${record.id}/edit`)"
+              size="small"
+            >
+              Edit
+            </a-button>
+
+            <a-button
+              type="primary"
+              size="small"
+              @click="router.push(`/applications/${record.id}`)"
+            >
+              Details
+            </a-button>
+
+            <a-button
+              danger
+              size="small"
+              @click="applicationStore.deleteApplication(record.id)"
+            >
+              Delete
+            </a-button>
+          </a-space>
+        </template>
+      </template>
+
+      <template #footer>Footer</template>
+    </a-table>
   </div>
 </template>
 
@@ -78,15 +150,73 @@ const locallyFilterApplications = computed(() => {
 const cardsPerPage = computed(() => parseInt(route.query.perPage) || 10);
 
 const currentPage = computed(() => parseInt(route.query.page) || 1);
-const totalPages = computed(() =>
-  Math.ceil(locallyFilterApplications.value.length / cardsPerPage.value)
-);
 
 const paginatedApplications = computed(() => {
   const start = (currentPage.value - 1) * cardsPerPage.value;
   const end = start + cardsPerPage.value;
   return locallyFilterApplications.value.slice(start, end);
 });
+
+const columns = [
+  {
+    title: "Company",
+    dataIndex: "company",
+    key: "company",
+    fixed: "left",
+    sorter: (a, b) => a.company > b.company,
+    sortDirections: ["descend", "ascend"],
+  },
+  {
+    title: "Role",
+    dataIndex: "role",
+    key: "role",
+  },
+  {
+    title: "Location",
+    dataIndex: "location",
+    key: "location",
+  },
+  {
+    title: "Status",
+    dataIndex: "status",
+    key: "status",
+    filters: [
+      { text: "Applied", value: "applied" },
+      { text: "Interview", value: "interview" },
+      { text: "Offer", value: "offer" },
+      { text: "Rejected", value: "rejected" },
+    ],
+    onFilter: (value, record) => record.status == value,
+  },
+  {
+    title: "Date Applied",
+    dataIndex: "appliedDate",
+    key: "appliedDate",
+  },
+  {
+    title: "Actions",
+    dataIndex: "actions",
+    key: "actions",
+    fixed: "right",
+  },
+];
+
+const pagination = {
+  showSizeChanger: true,
+  showQuickJumper: true,
+  showTotal: (total) => `Total ${total} items`,
+  position: "bottomCenter",
+};
+
+function getStatusColor(status) {
+  const colorMap = {
+    applied: "blue",
+    interview: "orange",
+    offer: "green",
+    rejected: "red",
+  };
+  return colorMap[status] || "default";
+}
 
 function setFilter(filter) {
   router.replace({ query: { filter, page: 1 } });
@@ -126,5 +256,12 @@ function handlePaginationChange(page, pageSize) {
   .pagination {
     margin: 20px;
   }
+}
+
+.applications-table-container {
+  padding: 0 40px;
+  margin: 30px;
+  border-radius: 20px;
+  background-color: #eee;
 }
 </style>

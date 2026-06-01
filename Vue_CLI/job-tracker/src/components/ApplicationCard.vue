@@ -11,7 +11,7 @@
     </p>
 
     <p class="applied-date">
-      <strong>Data Applied: </strong>{{ application.appliedDate }}
+      <strong>Date Applied: </strong>{{ application.appliedDate }}
     </p>
 
     <a-space size="middle">

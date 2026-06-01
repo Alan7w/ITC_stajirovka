@@ -21,14 +21,24 @@
       "url": "https://metacareers.com"
     },
     {
-      "id": "4",
+      "company": "Spotify",
+      "role": "UI Developer",
+      "location": "Remote",
+      "status": "rejected",
+      "appliedDate": "2025-04-05",
+      "notes": "Rejected after first round. Feedback: needed more backend experience.",
+      "url": "https://spotify.com/jobs",
+      "id": "3"
+    },
+    {
       "company": "Airbnb",
       "role": "Frontend Engineer",
       "location": "San Francisco, CA",
       "status": "offer",
       "appliedDate": "2025-03-20",
-      "notes": "Offer received! Salary: $120k. Deadline to respond: May 30.",
-      "url": "https://careers.airbnb.com"
+      "notes": "Offer received! Salary: $150k. Deadline to respond: May 30.",
+      "url": "https://careers.airbnb.com",
+      "id": "4"
     },
     {
       "id": "5",
@@ -121,14 +131,14 @@
       "url": "https://github.com/about/careers"
     },
     {
-      "id": "14",
       "company": "Twitch",
       "role": "Frontend Developer",
       "location": "San Francisco, CA",
       "status": "rejected",
       "appliedDate": "2025-04-10",
       "notes": "Rejected after technical screen. Feedback: React depth needed improvement.",
-      "url": "https://twitch.tv/jobs"
+      "url": "https://twitch.tv/jobs",
+      "id": "14"
     },
     {
       "id": "15",
@@ -321,14 +331,14 @@
       "url": "https://posthog.com/careers"
     },
     {
+      "id": "34",
       "company": "Resend",
       "role": "UI Engineer",
       "location": "Remote",
-      "status": "offer",
+      "status": "applied",
       "appliedDate": "2025-05-21",
       "notes": "Early-stage startup. Love their developer-first approach.",
-      "url": "https://resend.com/careers",
-      "id": "34"
+      "url": "https://resend.com/careers"
     },
     {
       "id": "35",
@@ -491,24 +501,14 @@
       "url": "https://liveblocks.io/careers"
     },
     {
-      "company": "asdfg",
-      "role": "qwerty",
-      "location": "qwerty",
-      "status": "rejected",
-      "appliedDate": "0023-12-31",
-      "notes": "qwerty",
-      "url": "qwerty",
-      "id": "ex8PHeMmudY"
-    },
-    {
-      "company": "Asadkhon Rasulov ",
-      "role": "zxcvb",
-      "location": "zxcvb",
-      "status": "rejected",
-      "appliedDate": "0023-12-31",
-      "notes": "zxcvb",
-      "url": "zxcvb",
-      "id": "QSVlsu2HeTM"
+      "company": "ATM",
+      "role": "FrontEnd Developer",
+      "location": "Niyazbek yuli 1",
+      "status": "offer",
+      "appliedDate": "2026-03-06",
+      "notes": "Hozircha yarim stavka",
+      "url": "www.imv.gov.uz",
+      "id": "WD5hdk90RBM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
