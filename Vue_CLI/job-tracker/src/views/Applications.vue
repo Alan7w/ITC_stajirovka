@@ -127,7 +127,7 @@
 <script setup>
 import { useApplicationStore } from "@/stores/applications";
 import { computed, onMounted } from "vue";
-import ApplicationCard from "@/components/ApplicationCard.vue";
+// import ApplicationCard from "@/components/ApplicationCard.vue";
 import { useRoute, useRouter } from "vue-router";
 
 const applicationStore = useApplicationStore();
