@@ -70,15 +70,12 @@
       :scroll="{ x: 1500, y: 600 }"
       :row-key="(record) => record.id"
       :pagination="pagination"
+      @change="handleTableChange"
     >
       <template #title>
         <a-flex align="center" justify="space-around">
           <h1>My Applications</h1>
-          <a-button
-            type="primary"
-            @click="router.push('/applications/add')"
-            class="add-application-btn"
-          >
+          <a-button type="primary" @click="openAddDrawer">
             + Add Application
           </a-button>
         </a-flex>
@@ -86,17 +83,14 @@
 
       <template #bodyCell="{ column, record }">
         <template v-if="column.key == 'status'">
-          <a-tag :color="getStatusColor(record.status)">{{
-            record.status
-          }}</a-tag>
+          <a-tag :color="getStatusColor(record.status)">
+            {{ record.status }}
+          </a-tag>
         </template>
 
         <template v-if="column.key == 'actions'">
           <a-space size="middle">
-            <a-button
-              @click="router.push(`/applications/${record.id}/edit`)"
-              size="small"
-            >
+            <a-button @click="openEditDrawer(record)" size="small">
               Edit
             </a-button>
 
@@ -108,32 +102,38 @@
               Details
             </a-button>
 
-            <a-button
-              danger
-              size="small"
-              @click="applicationStore.deleteApplication(record.id)"
+            <a-popconfirm
+              title="Proceed to delete this application?"
+              @confirm="handleDeleteConfirm(record.id)"
             >
-              Delete
-            </a-button>
+              <a-button danger size="small">Delete</a-button>
+            </a-popconfirm>
           </a-space>
         </template>
       </template>
 
-      <template #footer>Footer</template>
+      <!-- <template #footer>Footer</template> -->
     </a-table>
   </div>
 </template>
 
 <script setup>
 import { useApplicationStore } from "@/stores/applications";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 // import ApplicationCard from "@/components/ApplicationCard.vue";
 import { useRoute, useRouter } from "vue-router";
+import { message } from "ant-design-vue";
+import { userDrawer } from "../composables/useDrawer";
+
+const { openAddDrawer, openEditDrawer } = userDrawer();
 
 const applicationStore = useApplicationStore();
 const route = useRoute();
 const router = useRouter();
 const currentFilter = computed(() => route.query.filter || "All");
+const statusFilter = computed(() =>
+  route.query.status ? [route.query.status] : null
+);
 
 onMounted(() => {
   applicationStore.fetchApplications();
@@ -157,25 +157,36 @@ const paginatedApplications = computed(() => {
   return locallyFilterApplications.value.slice(start, end);
 });
 
-const columns = [
+const columns = computed(() => [
   {
     title: "Company",
     dataIndex: "company",
     key: "company",
     fixed: "left",
-    sorter: (a, b) => a.company > b.company,
-    sortDirections: ["descend", "ascend"],
+    sorter: {
+      compare: (a, b) => a.company.localeCompare(b.company),
+      multiple: 3,
+    },
+    sortDirections: ["ascend", "descend"],
   },
+
   {
     title: "Role",
     dataIndex: "role",
     key: "role",
+    sorter: {
+      compare: (a, b) => a.role.localeCompare(b.role),
+      multiple: 2,
+    },
+    sortDirections: ["ascend", "descend"],
   },
+
   {
     title: "Location",
     dataIndex: "location",
     key: "location",
   },
+
   {
     title: "Status",
     dataIndex: "status",
@@ -187,25 +198,40 @@ const columns = [
       { text: "Rejected", value: "rejected" },
     ],
     onFilter: (value, record) => record.status == value,
+    filteredValue: statusFilter.value,
   },
+
   {
     title: "Date Applied",
     dataIndex: "appliedDate",
     key: "appliedDate",
+    sorter: {
+      compare: (a, b) => a.appliedDate.localeCompare(b.appliedDate),
+      multiple: 1,
+    },
+    sortDirections: ["ascend", "descend"],
   },
+
   {
     title: "Actions",
     dataIndex: "actions",
     key: "actions",
     fixed: "right",
   },
-];
+]);
 
-const pagination = {
+const pagination = reactive({
+  pageSize: 5,
+  pageSizeOptions: ["5", "10", "15", "20", "25", "30", "35", "40", "45", "50"],
   showSizeChanger: true,
   showQuickJumper: true,
   showTotal: (total) => `Total ${total} items`,
-  position: "bottomCenter",
+  position: ["bottomCenter"],
+});
+
+const handleDeleteConfirm = (id) => {
+  applicationStore.deleteApplication(id);
+  message.success("Application deleted successfully");
 };
 
 function getStatusColor(status) {
@@ -217,6 +243,18 @@ function getStatusColor(status) {
   };
   return colorMap[status] || "default";
 }
+
+function handleTableChange(page) {
+  pagination.pageSize = page.pageSize;
+}
+
+const open = ref(false);
+const showDrawer = () => {
+  open.value = true;
+};
+const onClose = () => {
+  open.value = false;
+};
 
 function setFilter(filter) {
   router.replace({ query: { filter, page: 1 } });

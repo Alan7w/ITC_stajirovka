@@ -62,6 +62,7 @@
         <a-date-picker
           v-model:value="formState.appliedDate"
           value-format="YYYY-MM-DD"
+          format="DD-MM-YYYY"
         />
       </a-form-item>
 
@@ -88,11 +89,13 @@
       <a-form-item :wrapper-col="{ offset: 8 }">
         <a-space size="large">
           <a-form-item>
-            <a-button type="primary" html-type="submit">Submit</a-button>
+            <a-button type="primary" html-type="submit">
+              {{ submitBtnText }}
+            </a-button>
           </a-form-item>
 
           <a-form-item>
-            <a-button @click="router.push('/applications')">Cancel</a-button>
+            <a-button @click="emit('cancel')">Cancel</a-button>
           </a-form-item>
         </a-space>
       </a-form-item>
@@ -101,7 +104,7 @@
 </template>
 
 <script setup>
-import router from "@/router";
+import { message } from "ant-design-vue";
 import { reactive } from "vue";
 
 const props = defineProps({
@@ -116,6 +119,18 @@ const props = defineProps({
       notes: "",
       url: "",
     }),
+  },
+  submitSuccessMessage: {
+    type: String,
+    default: "Form submitted",
+  },
+  submitBtnText: {
+    type: String,
+    default: "Submit",
+  },
+  cancelMessage: {
+    type: String,
+    default: "Submission cancelled",
   },
 });
 
@@ -132,6 +147,7 @@ const formState = reactive({
 const emit = defineEmits(["submit"]);
 
 function handleSubmit() {
+  message.success(props.submitSuccessMessage);
   emit("submit", { ...formState });
 }
 </script>

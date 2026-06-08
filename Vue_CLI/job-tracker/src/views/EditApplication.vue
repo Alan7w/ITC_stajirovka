@@ -2,7 +2,10 @@
   <ApplicationForm
     v-if="application"
     :initialData="application"
+    :submitSuccessMessage="'Changes saved successfully'"
     @submit="editApplication"
+    :submitBtnText="'Save changes'"
+    :cancelMessage="'Application not changed'"
   />
   <p v-else>Loading...</p>
 </template>

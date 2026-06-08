@@ -1,6 +1,11 @@
 <template>
   <h1 class="add-new-app-header">App a New Application</h1>
-  <ApplicationForm @submit="submitNewApplication" />
+    <ApplicationForm
+      @submit="submitNewApplication"
+      :submitSuccessMessage="'Application created successfully'"
+      :submitBtnText="'Create application'"
+      :cancelMessage="'Application creation cancelled'"
+    />
 </template>
 
 <script setup>

@@ -5,7 +5,12 @@
       <a-button @click="router.push(`/applications/${application.id}/edit`)">
         Edit
       </a-button>
-      <a-button danger @click="handleDelete"> Delete </a-button>
+      <a-popconfirm
+        title="Proceed to delete this application?"
+        @confirm="handleDelete()"
+      >
+        <a-button danger>Delete</a-button>
+      </a-popconfirm>
       <a-button type="primary" @click="router.push('/applications')">
         Back
       </a-button>
@@ -18,6 +23,7 @@
 import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useApplicationStore } from "@/stores/applications";
+import { message } from "ant-design-vue";
 
 const applicationStore = useApplicationStore();
 
@@ -36,6 +42,7 @@ onMounted(() => {
 
 function handleDelete() {
   applicationStore.deleteApplication(id);
+  message.success("Application deleted successfully");
   router.push("/applications");
 }
 </script>

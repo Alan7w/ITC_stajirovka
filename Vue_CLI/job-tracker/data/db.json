@@ -1,29 +1,19 @@
 {
   "applications": [
     {
-      "id": "1",
-      "company": "Google",
-      "role": "Frontend Developer",
-      "location": "Remote",
-      "status": "applied",
-      "appliedDate": "2025-05-01",
-      "notes": "Referral from John",
-      "url": "https://careers.google.com"
-    },
-    {
-      "id": "2",
       "company": "Meta",
       "role": "Vue.js Engineer",
       "location": "New York, NY",
-      "status": "interview",
+      "status": "offer",
       "appliedDate": "2025-04-18",
       "notes": "HR reached out via LinkedIn. Technical interview scheduled.",
-      "url": "https://metacareers.com"
+      "url": "https://metacareers.com",
+      "id": "2"
     },
     {
       "company": "Spotify",
       "role": "UI Developer",
-      "location": "Remote",
+      "location": "Manchester, UK",
       "status": "rejected",
       "appliedDate": "2025-04-05",
       "notes": "Rejected after first round. Feedback: needed more backend experience.",
@@ -51,14 +41,14 @@
       "url": "https://jobs.netflix.com"
     },
     {
-      "id": "6",
       "company": "Notion",
       "role": "Product Engineer",
-      "location": "Remote",
+      "location": "Manhattan, NY",
       "status": "interview",
       "appliedDate": "2025-04-28",
       "notes": "Two rounds done. Final round with the CTO next week.",
-      "url": "https://notion.so/careers"
+      "url": "https://notion.so/careers",
+      "id": "6"
     },
     {
       "id": "7",
@@ -461,16 +451,6 @@
       "url": "https://encore.dev/careers"
     },
     {
-      "id": "47",
-      "company": "Zed",
-      "role": "UI Engineer",
-      "location": "Remote",
-      "status": "applied",
-      "appliedDate": "2025-05-16",
-      "notes": "Next-gen code editor. Dream to work on developer tooling at this level.",
-      "url": "https://zed.dev/careers"
-    },
-    {
       "id": "48",
       "company": "Raycast",
       "role": "Frontend Engineer",
@@ -509,6 +489,26 @@
       "notes": "Hozircha yarim stavka",
       "url": "www.imv.gov.uz",
       "id": "WD5hdk90RBM"
+    },
+    {
+      "company": "wefwe",
+      "role": "wefwef",
+      "location": "wef",
+      "status": "interview",
+      "appliedDate": "2026-06-25",
+      "notes": "",
+      "url": "www.wef.com",
+      "id": "zoWshjI6Ri0"
+    },
+    {
+      "company": " asd",
+      "role": "asd",
+      "location": "asd",
+      "status": "rejected",
+      "appliedDate": "2026-06-08",
+      "notes": "asd",
+      "url": "www.asd.sd",
+      "id": "3_2fsVEE1Tw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
