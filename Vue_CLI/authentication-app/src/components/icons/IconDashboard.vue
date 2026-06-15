@@ -1,0 +1,62 @@
+<script setup lang="ts">
+import Icon from '@ant-design/icons-vue'
+</script>
+
+<template>
+  <icon>
+    <template #component>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+      >
+        <rect
+          x="11.25"
+          y="2.5"
+          width="6.25"
+          height="6.25"
+          rx="2.5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <rect
+          x="11.25"
+          y="11.25"
+          width="6.25"
+          height="6.25"
+          rx="2.5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <rect
+          x="2.5"
+          y="2.5"
+          width="6.25"
+          height="6.25"
+          rx="2.5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <rect
+          x="2.5"
+          y="11.25"
+          width="6.25"
+          height="6.25"
+          rx="2.5"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </template>
+  </icon>
+</template>

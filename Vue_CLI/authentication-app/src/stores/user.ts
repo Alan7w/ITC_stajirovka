@@ -1,10 +1,22 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, h, computed } from "vue";
+import { useRouter } from "vue-router";
 import api from "@/api.config"
 import { useGlobalStore } from "./global";
-import router from "@/router";
 
-// import { USER_PERMISSIONS } from '@/constants/enums'
+import { USER_PERMISSIONS } from '@/constants/enums'
+
+import IconDashboard from '@/components/icons/IconDashboard.vue'
+import IconUsers from '@/components/icons/IconUsers.vue'
+import IconBriefcase from '@/components/icons/IconBriefcase.vue'
+import IconCriteria from '@/components/icons/IconCriteria.vue'
+import IconInspector from '@/components/icons/IconInspector.vue'
+import IconMessage from '@/components/icons/IconMessage.vue'
+import IconReport from '@/components/icons/IconReport.vue'
+import IconViolationReports from '@/components/icons/IconViolationReports.vue'
+// import IconSettings from '@/components/icons/IconSettings.vue'
+import IconLogs from '@/components/icons/IconLogs.vue'
+import IconMonitoring from '@/components/icons/IconMonitoring.vue'
 
 interface IUserMe {
     user_id: string
@@ -31,10 +43,117 @@ interface IUserMe {
     permissions: string[]
 }
 
+interface IMenuItem {
+    key: string,
+    icon: () => void,
+    label: string,
+    title: string,
+    path?: string,
+    permissions: string[]
+}
+
 export const useUserStore = defineStore('user', () => {
     const user = ref({} as IUserMe)
     const userMeLoading = ref(false)
     const globalStore = useGlobalStore()
+    const router = useRouter()
+
+    const menuItems = ref<IMenuItem[]>([
+        {
+            key: 'dashboard',
+            icon: () => h(IconDashboard),
+            label: 'dashboard',
+            title: 'dashboard',
+            path: '/dashboard',
+            permissions: [USER_PERMISSIONS.VIEW_DASHBOARD],
+        },
+        {
+            key: 'monitoring',
+            icon: () => h(IconMonitoring),
+            label: 'monitoring',
+            title: 'monitoring',
+            path: '/monitoring',
+            permissions: [USER_PERMISSIONS.VIEW_SYSTEM_MONITORING],
+        },
+        {
+            key: 'manageUsers',
+            icon: () => h(IconUsers),
+            label: 'manageUsers',
+            title: 'manageUsers',
+            path: '/manage-users',
+            permissions: [USER_PERMISSIONS.VIEW_USER_CONTROL],
+        },
+        {
+            key: 'entrepreneurs',
+            icon: () => h(IconBriefcase),
+            label: 'entrepreneursList',
+            title: 'entrepreneursList',
+            path: '/entrepreneurs',
+            permissions: [USER_PERMISSIONS.VIEW_REGISTRY],
+        },
+        {
+            key: 'criteria',
+            icon: () => h(IconCriteria),
+            label: 'criteria',
+            title: 'criteria',
+            path: '/criteria',
+            permissions: [USER_PERMISSIONS.VIEW_CRITERIA],
+        },
+        {
+            key: 'inspectors',
+            icon: () => h(IconInspector),
+            label: 'inspectors',
+            title: 'inspectors',
+            path: '/inspectors',
+            permissions: [USER_PERMISSIONS.VIEW_INSPECTORS],
+        },
+        {
+            key: 'message',
+            icon: () => h(IconMessage),
+            label: 'message',
+            title: 'message',
+            path: '/message',
+            permissions: [USER_PERMISSIONS.VIEW_NOTIFICATION],
+        },
+        {
+            key: 'violationReports',
+            icon: () => h(IconViolationReports),
+            label: 'violationReports',
+            title: 'violationReports',
+            path: '/violation-reports',
+            permissions: [USER_PERMISSIONS.VIEW_USER_CONTROL],
+        },
+        {
+            key: 'reports',
+            icon: () => h(IconReport),
+            label: 'reports',
+            title: 'reports',
+            path: '/reports',
+            permissions: [USER_PERMISSIONS.VIEW_REPORTS],
+        },
+        {
+            key: 'logs',
+            icon: () => h(IconLogs),
+            label: 'logs',
+            title: 'logs',
+            path: '/logs',
+            permissions: [USER_PERMISSIONS.VIEW_LOGS],
+        },
+        // {
+        //   key: 'settings',
+        //   icon: () => h(IconSettings),
+        //   label: 'settings',
+        //   title: 'settings',
+        //   permissions: ['all'],
+        // },
+    ])
+
+    const filteredMenuItems = computed(() => {
+        return menuItems.value.filter(item => {
+            if (item.permissions.includes('all')) return true
+            return item.permissions.some(permission => user.value.permissions?.includes(permission))
+        })
+    })
 
     const userMe = async () => {
         userMeLoading.value = true
@@ -65,5 +184,5 @@ export const useUserStore = defineStore('user', () => {
         }
     }
 
-    return { userMe, logout }
+    return { userMe, logout, filteredMenuItems, user }
 })

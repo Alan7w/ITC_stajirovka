@@ -22,7 +22,7 @@ const errorHandler = async (error) => {
         localStorage.removeItem('token')
     } else if (error?.response?.data?.message) {
         errorResponse.status = error.response.status
-        errorResponse.message = error.respon.data.message
+        errorResponse.message = error.response.data.message
     } else if (error?.response?.data?.errors) {
         const combined = Object.values(error?.response?.data?.errors)
             .flat() // flatten arrays of strings
